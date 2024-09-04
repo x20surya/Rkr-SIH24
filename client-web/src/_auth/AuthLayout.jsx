@@ -1,8 +1,9 @@
+import { useGlobalContext } from "@/context/GlobalContext";
 import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 export default function AuthLayout() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const {isAuthenticated} = useGlobalContext()
   return (
     <>
       {isAuthenticated ? (
