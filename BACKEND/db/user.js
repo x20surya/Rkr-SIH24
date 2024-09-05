@@ -36,8 +36,11 @@ const CollectionSchema = new mongoose.Schema({
         ref: 'User'
     },
     products : [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
+        qty : Number,
+        id : {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product'
+        }
     }]
 })
 

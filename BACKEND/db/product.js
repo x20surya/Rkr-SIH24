@@ -9,7 +9,7 @@ const ProductSchema = new mongoose.Schema({
     price : String,
     descripton : String,
     dimensions : String,
-    stock : Int16Array,
+    stock : Number,
     tags : [String],
     reviews : [{
         type: mongoose.Schema.Types.ObjectId,
@@ -22,7 +22,7 @@ const ReviewSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product'
     },
-    stars : Int8Array,
+    stars : Number,
     subject : String,
     descripton : String
 })

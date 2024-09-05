@@ -9,7 +9,7 @@ const OrderSchema = new mongoose.Schema({
     price : String,
     expetedDeliver : String,
     product : [{
-        quantity : Int16Array,
+        quantity : Number,
         id : {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Product'

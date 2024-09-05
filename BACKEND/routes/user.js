@@ -13,7 +13,7 @@ router.post("/signup",emailCheckUp, emailVerification ,async (req, res)=> {
     const first_name = req.body.first_name
     const last_name = req.body.last_name
     const password = req.body.password
-    const cart = req.body.cart
+    const cartProducts = req.body.cart
     
     const salt = bcrypt.genSaltSync(10)
     const hash = await bcrypt.hash(password, salt)
@@ -28,6 +28,13 @@ router.post("/signup",emailCheckUp, emailVerification ,async (req, res)=> {
         collections : [],
         orders : []
     })
+
+    const cart = listAdder(`cart_${user.id}`, user.id)
+    const wishlist = listAdder(`wishlist_${user.id}`, user.id)
+
+    user.cart = cart
+    user.wishlist = wishlist
+    
     user.save()
 
     return res.json({
