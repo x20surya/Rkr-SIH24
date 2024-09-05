@@ -11,7 +11,7 @@ const GlobalProvider = ({ children }) => {
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     setToken(storedToken);
-    setIsAuthenticated(true);
+    setIsAuthenticated(false);
   }, []);
 
   return (
