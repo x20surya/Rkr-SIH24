@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 import env from "dotenv"
 env.config()
 
-mongoose.connect(`${process.env.MONGOBD}PRODUCTS`)
+const db = mongoose.createConnection(`${process.env.MONGOBD}PRODUCTS`)
 
 const ProductSchema = new mongoose.Schema({
     name : String,
@@ -27,5 +27,5 @@ const ReviewSchema = new mongoose.Schema({
     descripton : String
 })
 
-export const Product = mongoose.model("Product", ProductSchema)
-export const Review = mongoose.model("Review", ReviewSchema)
+export const Product = db.model("Product", ProductSchema)
+export const Review = db.model("Review", ReviewSchema)

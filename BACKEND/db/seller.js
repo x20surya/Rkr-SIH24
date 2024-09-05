@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 import env from "dotenv"
 env.config()
 
-mongoose.connect(`${process.env.MONGOBD}SELLERS`)
+const db = mongoose.createConnection(`${process.env.MONGOBD}SELLERS`)
 
 const SellerSchema = new mongoose.Schema({
     userID : {
@@ -20,4 +20,4 @@ const SellerSchema = new mongoose.Schema({
     }]
 })
 
-export const Seller = mongoose.model("Seller", SellerSchema)
+export const Seller = db.model("Seller", SellerSchema)
