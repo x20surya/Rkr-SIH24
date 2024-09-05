@@ -8,7 +8,9 @@ const ProductSchema = new mongoose.Schema({
     name : String,
     price : String,
     descripton : String,
+    dimensions : String,
     stock : Int16Array,
+    tags : [String],
     reviews : [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Review'
@@ -26,3 +28,4 @@ const ReviewSchema = new mongoose.Schema({
 })
 
 export const Product = mongoose.model("Product", ProductSchema)
+export const Review = mongoose.model("Review", ReviewSchema)

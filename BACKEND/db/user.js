@@ -6,10 +6,11 @@ mongoose.connect(`${process.env.MONGOBD}USERS`)
 
 const UserSchema = new mongoose.Schema({
     first_name : String,
-    surname : String,
+    last_name : String,
     password : String,
     email : String,
-    email_varified : Boolean,
+    emailVerified : Boolean,
+    address : [String],
     wishlist : {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Collection'
@@ -29,6 +30,11 @@ const UserSchema = new mongoose.Schema({
 })
 
 const CollectionSchema = new mongoose.Schema({
+    name : String,
+    user : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
     products : [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product'
@@ -36,5 +42,5 @@ const CollectionSchema = new mongoose.Schema({
 })
 
 export const User = mongoose.model("User", UserSchema)
-export const Collection = mongoose.model("Collections", CollectionSchema)
+export const Lists = mongoose.model("Collection", CollectionSchema)
 

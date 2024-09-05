@@ -7,6 +7,7 @@ mongoose.connect(`${process.env.MONGOBD}ORDERS`)
 const OrderSchema = new mongoose.Schema({
     name : String,
     price : String,
+    expetedDeliver : String,
     product : [{
         quantity : Int16Array,
         id : {
