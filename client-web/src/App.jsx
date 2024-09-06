@@ -18,7 +18,7 @@ function App() {
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
           <Route path="/region" element={<Region/>}/>
-          <Route path="/region/seller/seller-info/id?" element={<SellerInfo/>} />
+          <Route path="/region/seller/seller-info/id" element={<SellerInfo/>} />
           
         </Route>
       </Routes>
