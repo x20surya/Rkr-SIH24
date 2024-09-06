@@ -31,19 +31,19 @@ export default function Topbar() {
   return (
     <Headroom>
     <div >
-      <header style={{backgroundImage: `url(${backgroundflowers})`}} className="bg-accent h-100px p-4">
-        <div className="flex-1 flex-row gap-x-10 justify-end  hidden lg:flex">
+      <header style={{backgroundImage: `url(${backgroundflowers})`}} className="bg-accent h-16 p-4">
+        <div className="flex-1 flex-row gap-x-20 justify-end  hidden lg:flex">
           <div className=" flex flex-row justify-center align-center gap-x-2">
             <img
               className="h-9 w-9 border-1 rounded-full bg-primary"
               src={indianwomen}
             />
-            <p className="bg-background rounded-md">NavbyUtkarsh</p>
+            <p className="bg-transparent text-white text-4xl rounded-md font-serif">Heritage Haat</p>
           </div>
-          <div className="flex flex-1 flex-row justify-end gap-x-(-1)">
+          <div className="flex flex-1 flex-row justify-end ">
             <Input
               placeholder={"🔎 Search a product,seller,shop etc."}
-              className="justify-center w-1/2 bg-background"
+              className="justify-center w-full  bg-background text-xl"
             />
           </div>
           <NavigationMenu>
