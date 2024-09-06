@@ -3,14 +3,15 @@ import BorderYellow from "@/components/shared/BorderYellow";
 import CarousalComponent from "@/components/shared/Carousel";
 import { Button } from "@/components/ui/button";
 import { yellowcloud1 } from "@/constants/borders";
+import { floralbackground } from "@/constants/borders";
 
 export default function Home() {
   return (
     <div className="w-full h-full flex flex-col items-center bg-background">
       <CarousalComponent />
       <div className="w-full h-5"></div>
-      <Borderbluered />
-      <div className="w-full flex flex-col lg:flex-row">
+      <BorderYellow bg={"secondary"} />
+      <div style={{backgroundImage: `url(${floralbackground})`}} className="w-full flex flex-col lg:flex-row">
         <div className="h-96 w-full"></div>
         <div className=" w-full flex flex-col px-20 py-20 gap-10">
           <div className="flex gap-5">
@@ -37,6 +38,7 @@ export default function Home() {
           </Button>
         </div>
       </div>
+      <BorderYellow bg={"primary"} />
       <div className="w-full flex flex-col lg:flex-row">
         <div className="h-96 w-full lg:order-1"></div>
         <div className=" w-full flex flex-col px-20 py-20 gap-10">
@@ -64,6 +66,7 @@ export default function Home() {
           </Button>
         </div>
       </div>
+      <BorderYellow bg={"accent"} />
       <div className="w-full flex flex-col lg:flex-row">
         <div className="h-96 w-full"></div>
         <div className=" w-full flex flex-col px-20 py-20 gap-10">
