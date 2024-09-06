@@ -1,54 +1,29 @@
-import {
-  backgroundflowers,
-  borderblue,
-  complexflower1,
-  slateflower1,
-  slatebg,
-  redflower1,
-  greenbg1,
-  yellowcloud1,
-} from "@/constants/borders";
 import Borderbluered from "@/components/shared/Borderbluered";
-import { Facebook, Instagram, Twitter, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import {
+    backgroundflowers,
+    complexflower1,
+    slateflower1,
+    slatebg,
+    redflower1,
+    greenbg1,
+    yellowcloud1,
+    borderblue,
+    roseflower
+  } from "@/constants/borders";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
-export default function SellerInfo(props) {
-  return (
-    <div className="h-[100%] w-full ">
-      <div className="h-48 lg:h-60 bg-card-foreground flex flex-col items-center justify-center">
-        <div className="h-40 w-40 lg:h-[16rem] lg:w-60 bg-card relative top-20 lg:top-32 rounded-[50%]"></div>
-      </div>
-      <Borderbluered />
 
-      <div className="relative flex flex-col items-center justify-center mt-20">
-        <h1 className="text-center font-bold text-3xl">Name</h1>
-        <div className="flex flex-row gap-4 items-center justify-center mt-4 ">
-          <Link>
-            <Facebook
-              color="white"
-              className="bg-primary rounded-lg h-8 w-8 p-1 "
-            />
-          </Link>
-          <Link>
-            <Instagram
-              color="white"
-              className="bg-primary rounded-lg h-8 w-8 p-1 "
-            />
-          </Link>
-          <Link>
-            <Twitter
-              color="white"
-              className="bg-primary rounded-lg h-8 w-8 p-1 "
-            />
-          </Link>
-        </div>
-        <Button className="mt-4 w-40">Follow</Button>
-        <p className="mt-3 mb-2 text-center text-lg font-semibold">
-          Detaiked description of user , his locality products he manufacture
-          etc
-        </p>
+export default function State() {
+  return (
+<div className="h-full w-full">
+<div className=" flex flex-col items-center h-40 w-screen bg-primary mb-4 shadow-md">
+      <Borderbluered />
+      <div className="flex items-center justify-center gap-3 mt-2  backdrop-sepia bg-secondary/20">
+      <img src={roseflower} alt="rose" className="relative left-8 scale-x-[-1] drop-shadow-md h-20 w-20 lg:h-24 lg:w-24"/>
+      <h1 className="font-bold lg:text-6xl text-5xl z-10 backdrop-contrast-75">Rajasthan</h1>
+      <img src={roseflower} alt="rose"  className="relative right-8 scale-x-[-1] drop-shadow-md h-20 w-20 lg:h-24 lg:w-24" />
       </div>
+    </div>
+    <div className="h-full w-full">
       <Tabs
         defaultValue="account"
         className="w-full flex flex-col items-center mt-6"
@@ -91,12 +66,12 @@ export default function SellerInfo(props) {
               <img
                 src={complexflower1}
                 alt="flower"
-                className="relative scale-x-[-1] rotate-180"
+                className="relative scale-x-[-1] rotate-180 "
               />
               <img
                 src={complexflower1}
                 alt="flower"
-                className="relative rotate-180"
+                className="relative rotate-180 "
               />
             </div>
             <p className="relative -top-20 text-center text-2xl font-bold z-10">Blogs</p>
@@ -104,6 +79,8 @@ export default function SellerInfo(props) {
           </div>
         </TabsContent>
       </Tabs>
+      </div>
     </div>
+    
   );
 }

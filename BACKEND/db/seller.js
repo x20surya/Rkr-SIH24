@@ -14,6 +14,7 @@ const SellerSchema = new mongoose.Schema({
         latitude : String,
         longitude : String
     },
+    verified : Boolean,
     products : [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product'

@@ -40,7 +40,8 @@ router.post("/signup",emailCheckUp, emailVerification ,async (req, res)=> {
     return res.json({
         email,
         first_name,
-        last_name
+        last_name,
+        id : user.id
     })
 })
 
