@@ -17,6 +17,7 @@ import floralbackground from "./floralbg.svg"
 import potteryman from "./potteryman.jpg"
 import indianart from "./indianart.jpg"
 import sidepattern from "./sidepattern.svg"
+import painting from "./painting.webp"
 
 export {
   borderblue,
@@ -37,5 +38,6 @@ export {
   floralbackground,
   potteryman,
   indianart,
-  sidepattern
+  sidepattern,
+  painting
 };

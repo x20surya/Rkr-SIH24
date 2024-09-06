@@ -9,11 +9,12 @@ import {
 import { Button } from "@/components/ui/button";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
+import { painting } from "@/constants/borders";
 
 export default function CarousalComponent() {
   const plugin = useRef(Autoplay({ delay: 2000 }));
   return (
-    <div className="w-[80%] h-fit pt-3 flex flex-col items-end gap-5">
+    <div className="w-[80%] h-fit pt-3 flex flex-col items-end gap-5 z-10">
       <Carousel
         plugins={[plugin.current]}
         className="w-full"
@@ -26,7 +27,7 @@ export default function CarousalComponent() {
               <div className="p-1">
                 <Card>
                   <CardContent className="flex h-[80vh] items-center justify-center p-6">
-                    <span className="text-4xl font-semibold">{index + 1}</span>
+                    <img src={painting}/>
                   </CardContent>
                 </Card>
               </div>
