@@ -12,6 +12,12 @@ import redflowerborder from "./redflowerborder.svg"
 import redflower1 from "./redflower1.svg"
 import slateflower1 from "./slateflower1.svg"
 import indianwomen from "./Indianwomen.svg"
+import roseflower from "./roseflower.svg"
+import floralbackground from "./floralbg.svg"
+import potteryman from "./potteryman.jpg"
+import indianart from "./indianart.jpg"
+import sidepattern from "./sidepattern.svg"
+import painting from "./painting.webp"
 
 export {
   borderblue,
@@ -27,5 +33,11 @@ export {
   redflowerborder,
   redflower1,
   slateflower1,
-  indianwomen
+  indianwomen,
+  roseflower,
+  floralbackground,
+  potteryman,
+  indianart,
+  sidepattern,
+  painting
 };
