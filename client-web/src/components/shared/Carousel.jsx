@@ -13,7 +13,7 @@ import { useRef } from "react";
 export default function CarousalComponent() {
   const plugin = useRef(Autoplay({ delay: 2000 }));
   return (
-    <div className="w-[80%] h-fit pt-14 flex flex-col items-end gap-5">
+    <div className="w-[80%] h-fit pt-3 flex flex-col items-end gap-5">
       <Carousel
         plugins={[plugin.current]}
         className="w-full"
