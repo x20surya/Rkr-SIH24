@@ -48,7 +48,7 @@ export default function ProductPage() {
       $ 5.99
     </h2>
     </div>
-<AccordionComponent />
+<TabsComponent />
     
       </div>
         </div>
