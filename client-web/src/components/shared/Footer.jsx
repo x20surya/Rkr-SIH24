@@ -4,23 +4,24 @@ import { Mail } from "lucide-react";
 import { Phone } from "lucide-react";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from "lucide-react";
 import { Map } from "lucide-react";
+import { cn } from "@/lib/utils";
 const Footer = () => {
     return(
    
        
                
     
-    <div className="flex justify-around bg-primary">
-         <div className="flex-item mt-4">
-         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+    <div className={cn("flex flex-col md:flex-row justify-around bg-primary p-4")}>
+         <div className="flex-item mt-4 text-center md:text-left">
+         <h1 className="scroll-m-20 text-4xl md:text-4xl font-extrabold tracking-tight lg:text-5xl">
       Subscribe to <br></br>our Newsletter
     </h1>
 
-    <p className="leading-7 [&:not(:first-child)]:mt-6">
+    <p className="leading-7 mt-4 md:mt-6">
      Join our community and get the latest updates on our products and services.
     </p>
     <br></br>
-    <div className="flex items-center">
+    <div className="flex items-center justify-center md:justify-start mt-4">
         <Input 
             placeholder="Email Address"
             type="email"
@@ -28,7 +29,7 @@ const Footer = () => {
         />
         <Button variant="outline"className="border-2 border-black ml-2">Subscribe</Button>
     </div>
-    <div className="flex items-center mt-6 mb-5 gap-10" >
+    <div className="flex items-center mt-6 mb-5 gap-4 md:gap-10 justify-center md:justify-start" >
 <InstagramIcon size={24} />
 <FacebookIcon size={24} />
 <TwitterIcon size={24} />
