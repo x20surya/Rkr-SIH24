@@ -7,6 +7,10 @@ import yellowcloud1 from "./yellowcloud1.svg";
 import slatebg from "./slatebg.svg";
 import greenbg1 from "./greenbg1.svg";
 import redleaf1 from "./redleaf1.svg";
+import redleafsmall from "./redleaftsmall.svg"
+import redflowerborder from "./redflowerborder.svg"
+import redflower1 from "./redflower1.svg"
+import slateflower1 from "./slateflower1.svg"
 
 export {
   borderblue,
@@ -18,4 +22,8 @@ export {
   slatebg,
   greenbg1,
   redleaf1,
+  redleafsmall,
+  redflowerborder,
+  redflower1,
+  slateflower1
 };
