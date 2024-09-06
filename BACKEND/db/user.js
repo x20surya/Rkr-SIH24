@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 import env from "dotenv"
 env.config()
 
-mongoose.connect(`${process.env.MONGOBD}USERS`)
+const db = mongoose.createConnection(`${process.env.MONGOBD}USERS`)
 
 const UserSchema = new mongoose.Schema({
     first_name : String,
@@ -44,6 +44,6 @@ const CollectionSchema = new mongoose.Schema({
     }]
 })
 
-export const User = mongoose.model("User", UserSchema)
-export const Lists = mongoose.model("Collection", CollectionSchema)
+export const User = db.model("User", UserSchema)
+export const Lists = db.model("Collection", CollectionSchema)
 

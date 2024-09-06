@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 import env from "dotenv"
 env.config()
 
-mongoose.connect(`${process.env.MONGOBD}ORDERS`)
+const db = mongoose.createConnection(`${process.env.MONGOBD}ORDERS`)
 
 const OrderSchema = new mongoose.Schema({
     name : String,
@@ -17,4 +17,4 @@ const OrderSchema = new mongoose.Schema({
     }],
 })
 
-export const Order = mongoose.model("Orders", OrderSchema)
+export const Order = db.model("Orders", OrderSchema)

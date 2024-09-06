@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken"
 import mongoose from "mongoose";
 import bcrypt from "bcrypt"
 import { emailCheckUp, emailVerification, userJWTAuthentication } from "../middleware/user.js";
-import { listAdder } from "../services/list.js";
+import { listAdder, listEditor } from "../services/list.js";
 
 const router = Router()
 
@@ -81,7 +81,7 @@ router.post("/signin", async (req, res)=>{
                 const token = jwt.sign({
                     id,
                     email,
-                    username,
+                    first_name,
                 }, process.env.JWT_PASSWORD)
                 
                 return res.json({
@@ -107,9 +107,29 @@ router.post("/signin", async (req, res)=>{
     }
 })
 
+router.post("/updateList" ,userJWTAuthentication , (req, res) => {
+    const action = req.body.action
+    const auth = req.headers.authentication
+    const token = auth.split(" ")[1]
+    const decode = jwt.decode(token)
+    const Id = decode.id
+    const pid = req.body.products
+
+    try{
+        listEditor(Id, pid, action)
+    }catch(err){
+        return res.json({
+            error : err.message
+        })
+    }
+    return res.json({
+        msg : "Item Added"
+    })
+})
+
 router.post("/addList",userJWTAuthentication, (req, res) => {
     const name = req.body.name
-    const auth = req.headers.Authentication
+    const auth = req.headers.authentication
     const token = auth.split(" ")[1]
     const decode = jwt.decode(token)
     const ID = decode.id
