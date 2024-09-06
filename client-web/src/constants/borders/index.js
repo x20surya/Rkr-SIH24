@@ -13,6 +13,7 @@ import redflower1 from "./redflower1.svg"
 import slateflower1 from "./slateflower1.svg"
 import indianwomen from "./Indianwomen.svg"
 import roseflower from "./roseflower.svg"
+import floralbackground from "./floralbg.svg"
 
 export {
   borderblue,
@@ -29,5 +30,6 @@ export {
   redflower1,
   slateflower1,
   indianwomen,
-  roseflower
+  roseflower,
+  floralbackground
 };
