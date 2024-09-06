@@ -11,6 +11,7 @@ import redleafsmall from "./redleaftsmall.svg"
 import redflowerborder from "./redflowerborder.svg"
 import redflower1 from "./redflower1.svg"
 import slateflower1 from "./slateflower1.svg"
+import indianwomen from "./Indianwomen.svg"
 
 export {
   borderblue,
@@ -25,5 +26,6 @@ export {
   redleafsmall,
   redflowerborder,
   redflower1,
-  slateflower1
+  slateflower1,
+  indianwomen
 };
