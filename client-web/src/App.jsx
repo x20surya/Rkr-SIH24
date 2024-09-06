@@ -4,7 +4,7 @@ import SignInForm from "./_auth/forms/SigninForm";
 import SignUpForm from "./_auth/forms/SignupForm";
 import RootLayout from "./_root/RootLayout";
 import Home from "./_root/pages/Home";
-import Region from "./region/region";
+import Region from "./components/region/region";
 import SellerInfo from "./_root/pages/seller-info";
 function App() {
   return (
@@ -13,11 +13,13 @@ function App() {
         <Route element={<AuthLayout />}>
           <Route path="/sign-in" element={<SignInForm />} />
           <Route path="/sign-up" element={<SignUpForm />} />
-          <Route path="/region" element={<Region/>}/>
-          <Route path="/region/seller/seller-info" element={<SellerInfo/>} />
+          
         </Route>
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
+          <Route path="/region" element={<Region/>}/>
+          <Route path="/region/seller/seller-info/id?" element={<SellerInfo/>} />
+          
         </Route>
       </Routes>
     </main>
