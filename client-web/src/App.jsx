@@ -6,6 +6,7 @@ import RootLayout from "./_root/RootLayout";
 import Home from "./_root/pages/Home";
 import Region from "./components/region/region";
 import SellerInfo from "./_root/pages/seller-info";
+import ProductPage from "./_root/pages/ProductPage";
 function App() {
   return (
     <main className="flex h-fit">
@@ -19,7 +20,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/region" element={<Region/>}/>
           <Route path="/region/seller/seller-info/id" element={<SellerInfo/>} />
-          
+          <Route path="/product" element={<ProductPage />} />
         </Route>
       </Routes>
     </main>
