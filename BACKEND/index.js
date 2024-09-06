@@ -1,4 +1,6 @@
 import UserRoutes from "./routes/user.js";
+import SellerRoutes from "./routes/seller.js"
+import ProductRoutes from "./routes/product.js"
 import express from "express"
 import cors from "cors"
 import env from "dotenv"
@@ -13,6 +15,8 @@ app.use(cors({
 }))
 
 app.use("/user", UserRoutes)
+app.use("/seller", SellerRoutes)
+app.use("/product", ProductRoutes)
 
 app.listen(process.env.PORT_NUMBER,()=>{
     console.log("Port Running on ", process.env.PORT_NUMBER)

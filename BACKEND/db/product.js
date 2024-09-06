@@ -5,8 +5,13 @@ env.config()
 const db = mongoose.createConnection(`${process.env.MONGOBD}PRODUCTS`)
 
 const ProductSchema = new mongoose.Schema({
+    seller : {
+        type : mongoose.Schema.ObjectId,
+        ref : 'Seller'
+    },
     name : String,
-    price : String,
+    price : Number,
+    verified : Boolean,
     descripton : String,
     dimensions : String,
     stock : Number,
