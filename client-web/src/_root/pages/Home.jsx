@@ -11,7 +11,10 @@ export default function Home() {
       <CarousalComponent />
       <div className="w-full h-5"></div>
       <BorderYellow bg={"secondary"} />
-      <div style={{backgroundImage: `url(${floralbackground})`}} className="w-full flex flex-col lg:flex-row">
+      <div
+        style={{ backgroundImage: `url(${floralbackground})` }}
+        className="w-full flex flex-col lg:flex-row"
+      >
         <div className="h-96 w-full"></div>
         <div className=" w-full flex flex-col px-20 py-20 gap-10">
           <div className="flex gap-5">
@@ -66,8 +69,8 @@ export default function Home() {
           </Button>
         </div>
       </div>
-      <BorderYellow bg={"accent"} />
-      <div className="w-full flex flex-col lg:flex-row">
+      <BorderYellow bg="secondary" />
+      <div style={{ backgroundImage: `url(${floralbackground})` }} className="w-full flex flex-col lg:flex-row">
         <div className="h-96 w-full"></div>
         <div className=" w-full flex flex-col px-20 py-20 gap-10">
           <div className="flex gap-5">
