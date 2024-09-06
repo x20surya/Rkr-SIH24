@@ -8,7 +8,7 @@ import Region from "./components/region/region";
 import SellerInfo from "./_root/pages/seller-info";
 function App() {
   return (
-    <main className="flex h-screen">
+    <main className="flex h-fit">
       <Routes>
         <Route element={<AuthLayout />}>
           <Route path="/sign-in" element={<SignInForm />} />
