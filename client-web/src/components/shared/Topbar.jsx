@@ -25,12 +25,13 @@ import Borderbluered from "./Borderbluered";
 import { indianwomen, roseflower } from "@/constants/borders";
 import { Button } from "../ui/button";
 import Headroom from "react-headroom"; 
+import { backgroundflowers } from "@/constants/borders";
 
 export default function Topbar() {
   return (
     <Headroom>
-    <div>
-      <header className="bg-accent h-100px p-4">
+    <div >
+      <header style={{backgroundImage: `url(${backgroundflowers})`}} className="bg-accent h-100px p-4">
         <div className="flex-1 flex-row gap-x-10 justify-end  hidden lg:flex">
           <div className=" flex flex-row justify-center align-center gap-x-2">
             <img
@@ -46,7 +47,9 @@ export default function Topbar() {
             />
           </div>
           <NavigationMenu>
+            
             <NavigationMenuList>
+            
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Our Store</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -71,6 +74,7 @@ export default function Topbar() {
                   <NavigationMenuLink>Link</NavigationMenuLink>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+              
             </NavigationMenuList>
           </NavigationMenu>
         </div>

@@ -14,10 +14,10 @@ import { painting } from "@/constants/borders";
 export default function CarousalComponent() {
   const plugin = useRef(Autoplay({ delay: 2000 }));
   return (
-    <div className="w-[80%] h-fit pt-3 flex flex-col items-end gap-5 z-10">
+    <div className="w-[80%] h-fit pt-3 flex flex-col items-end gap-5">
       <Carousel
         plugins={[plugin.current]}
-        className="w-full"
+        className="w-full relative"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
@@ -34,15 +34,16 @@ export default function CarousalComponent() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-      <Button
+        <CarouselPrevious className="z-10 bg-transparent border-none" />
+        <CarouselNext className="z-10 bg-transparent border-none"/>
+        <Button
         size="lg"
-        className="border-[4px] rounded-none border-card-foreground text-lg"
+        className="border-[4px] border-card-foreground text-lg absolute bottom-6 right-6"
       >
         Shop now
       </Button>
+      </Carousel>
+      
     </div>
   );
 }
