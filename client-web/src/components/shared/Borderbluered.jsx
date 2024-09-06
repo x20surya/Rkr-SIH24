@@ -1,7 +1,7 @@
 import { redflower1 } from "@/constants/borders";
 import { slateflower1 } from "@/constants/borders";
 
-export default function Borderbluered() {
+export default function Borderbluered({bg}) {
   return (
     <div
       style={{
@@ -10,7 +10,7 @@ export default function Borderbluered() {
         backgroundPosition: "center",
         backgroundSize: "80px",
       }}
-      className="h-12 w-full"
+      className={`h-12 w-full z-40 bg-${bg}`}
     >
       <div
         style={{
