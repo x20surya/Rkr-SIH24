@@ -14,6 +14,9 @@ import slateflower1 from "./slateflower1.svg"
 import indianwomen from "./Indianwomen.svg"
 import roseflower from "./roseflower.svg"
 import floralbackground from "./floralbg.svg"
+import potteryman from "./potteryman.jpg"
+import indianart from "./indianart.jpg"
+import sidepattern from "./sidepattern.svg"
 
 export {
   borderblue,
@@ -31,5 +34,8 @@ export {
   slateflower1,
   indianwomen,
   roseflower,
-  floralbackground
+  floralbackground,
+  potteryman,
+  indianart,
+  sidepattern
 };
