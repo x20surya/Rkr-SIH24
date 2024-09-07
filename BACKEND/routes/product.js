@@ -63,7 +63,7 @@ router.post("/add",JWT_seller_authentication ,async (req, res) => {
     })
 })
 
-router.get("/getProduct",userJWTAuthentication , async (req, res) => {
+router.post("/getProduct",userJWTAuthentication , async (req, res) => {
     const pid = req.body.productId
     const product = await Product.findById(pid)
     return res.json({
