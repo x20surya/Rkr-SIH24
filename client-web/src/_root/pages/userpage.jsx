@@ -4,7 +4,8 @@ import { Phone } from 'lucide-react';
 import { Map } from 'lucide-react';
 import { Mail } from 'lucide-react';
 import { Progress } from "@/components/ui/progress"
-
+import { DataTable } from '@/components/shared/ordertable';
+import Wishlist from '@/components/user/wishlist';
 export default function UserPage() {
   return (
     <div className="min-h-screen bg p-6 flex items-center justify-center w-full">
@@ -42,7 +43,24 @@ Aditya Raj
         </div>
         <div className="grid grid-rows-2 gap-6">
           <div className="bg-background p-6 rounded-lg shadow-lg">
-            <UserCard />
+          <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+      Manage your Account
+    </h2>
+    <div className='grid grid-rows-2 grid-cols-2 gap-6 mt-4' >
+      <div>
+   <Wishlist />
+   </div>
+   <div>
+   <Wishlist />
+   </div>
+   <div>
+   <Wishlist />
+   </div>
+   <div>
+   <Wishlist />
+   </div>
+
+   </div>
           </div>
           <div className=" p-6 rounded-lg shadow-lg">
             <UserCard />
