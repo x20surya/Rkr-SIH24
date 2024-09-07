@@ -20,7 +20,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { signIn } from "@/lib/backend/api";
+import { redirect } from "react-router-dom";
 
 const schema = z.object({
   email: z.string().email(),
@@ -28,6 +30,7 @@ const schema = z.object({
 });
 
 export default function SignInForm() {
+  const navigate = useNavigate();
   const form = useForm({
     defaultValues: {
       email: "",
@@ -47,7 +50,20 @@ export default function SignInForm() {
   }, [form.formState.errors.root]);
 
   const { toast } = useToast();
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    try {
+      const res = await signIn(data.email, data.password);
+      toast({
+        title: "Succesfully logged in",
+      });
+      navigate("/");
+    } catch (e) {
+      console.log(e);
+      form.setError("root", {
+        message: e.message,
+      });
+    }
+  };
 
   return (
     <>

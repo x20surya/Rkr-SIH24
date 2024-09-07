@@ -1,7 +1,6 @@
-import { data } from "autoprefixer";
 import axios from "axios";
 
-const baseURL = "";
+const baseURL = "http://localhost:3000";
 
 export async function createUser(email, password, firstName, lastName) {
   await axios({
@@ -13,13 +12,15 @@ export async function createUser(email, password, firstName, lastName) {
       first_name: firstName,
       last_name: lastName,
       password: password,
+      cart: [],
     },
   })
     .then((res) => {
       if (res.data.error) {
         throw new Error(res.data.error);
       }
-      return res.data.token;
+      console.log(res.data);
+      return res.data;
     })
     .catch((e) => {
       throw new Error(e);
@@ -62,5 +63,5 @@ export async function signIn(email, password) {
 }
 
 export function signOut() {
-    localStorage.setItem("token", "");
+  localStorage.setItem("token", "");
 }
