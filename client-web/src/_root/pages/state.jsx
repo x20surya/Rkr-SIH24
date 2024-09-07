@@ -120,7 +120,7 @@ export default function State() {
               value="Products"
               className="w-full flex  items-center justify-center "
             >
-              <div className="w-[95%]  bg-white rounded-lg flex flex-col  mt-2 mb-8">
+              <div className="w-[95%]  bg-white rounded-lg flex flex-col  mt-2 mb-8 ">
                 <div className="flex flex-row justify-between ">
                   <img
                     src={complexflower1}
@@ -133,7 +133,7 @@ export default function State() {
                     className="relative rotate-180"
                   />
                 </div>
-                <p className="relative -top-20 text-center text-4xl font-bold z-10">
+                <p className="relative -top-20 text-center text-4xl font-bold ">
                   Products
                 </p>
                 <img
@@ -141,7 +141,7 @@ export default function State() {
                   alt=""
                   className="h-7 relative -top-20 "
                 />
-                <div className="relative -top-10 grid lg:grid-cols-4 grid-cols-2 gap-4  p-3">
+                <div className="relative -top-10 grid lg:grid-cols-3 grid-cols-2 gap-4  p-3 bg-white">
                   {products.map((product, index) => (
                     <ProductCard key={index} product={product} />
                   ))}
@@ -152,8 +152,8 @@ export default function State() {
               value="Sellers"
               className="w-full flex items-center justify-center "
             >
-              <div className="w-[95%]  bg-white rounded-lg flex flex-col mb-8">
-                <div className="flex flex-row justify-between ">
+              <div className="w-[95%]  bg-white rounded-lg flex flex-col mb-8  bg-cover items-center">
+                <div className="w-full flex flex-row justify-between ">
                   <img
                     src={complexflower1}
                     alt="flower"
@@ -165,16 +165,17 @@ export default function State() {
                     className="relative rotate-180 "
                   />
                 </div>
-                <p className="relative -top-20 text-center text-4xl font-bold z-10">
+                <p className="text-center text-4xl font-bold relative -top-20">
                   Sellers
                 </p>
                 <img
                   src={slateflower1}
                   alt=""
-                  className="h-6 relative -top-20 "
+                  className="h-6 relative -top-20"
                 />
+                
                 <div className="relative -top-10 flex w-full justify-center items-center">
-                  <Carousel className="w-5/6 ">
+                  <Carousel className="w-[70%] ">
                     <CarouselContent>
                       <CarouselItem><Sellercard/></CarouselItem>
                       <CarouselItem><Sellercard/></CarouselItem>
