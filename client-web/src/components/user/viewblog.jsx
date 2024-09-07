@@ -13,7 +13,7 @@ export default function Blogs() {
           
     <Dialog>
       <DialogTrigger>
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-row gap-x-1.5 lg:gap-5">
           <div>
           <NotebookPenIcon className="h-[18] w-[18]"/>
           </div>
