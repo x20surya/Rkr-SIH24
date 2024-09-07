@@ -108,7 +108,6 @@ router.get("/getProductByFilter", userJWTAuthentication, (req, res) => {
     const temp_filter = req.body.filter
     const filter = JSON.parse(temp_filter)
 
-
 })
 
 export default router

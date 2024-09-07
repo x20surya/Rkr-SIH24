@@ -8,7 +8,10 @@ from colllabrative_knn import collabrative_knn
 from content import content_based_filtering
 import pandas as pd
 from matrix_factorization_method import matrix_factorization
-uri='mongodb+srv://aditya0405raj:1234@thread.dm2nz.mongodb.net/?retryWrites=true&w=majority&appName=thread'
+from dotenv import load_dotenv
+load_dotenv()
+import os
+uri = os.getenv('uri')
 client = MongoClient(uri, server_api=ServerApi('1'))
 app = Flask(__name__)
 
