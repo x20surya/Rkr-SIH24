@@ -81,7 +81,7 @@ router.post("/editProduct",JWT_seller_authentication ,productExists ,sellerHasPr
 }) 
 
 router.get("/recommendedOrders" , userJWTAuthentication, (req, res) => {
-    
+
 })
 
 router.get("/getProductByFilter",  userJWTAuthentication,async (req, res) => {

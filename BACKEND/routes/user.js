@@ -169,8 +169,10 @@ router.post("/editAddress/:id",userJWTAuthentication ,async (req, res) => {
 router.post("/getSeller", userJWTAuthentication, async (req, res) => {
     const sellerId = req.body.sellerId
     let seller
+    let user
     try{
         seller = await Seller.findById(sellerId)
+        user = await User.findById(seller.userID)
     }catch(err){
         return res.json({
             error : "Invalid SellerID"
@@ -179,7 +181,8 @@ router.post("/getSeller", userJWTAuthentication, async (req, res) => {
     
 
     return res.json({
-        seller
+        seller,
+        user
     })
 })
 
