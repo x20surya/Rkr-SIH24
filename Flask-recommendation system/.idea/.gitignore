@@ -4,8 +4,7 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 # Virtual environment
-/.venv/
+.venv/
 # Python cache files
 __pycache__/
-# .env file
-/.env
+.env
