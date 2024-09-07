@@ -9,6 +9,7 @@ import SellerInfo from "./_root/pages/seller-info";
 import ProductPage from "./_root/pages/ProductPage";
 import State from "./_root/pages/state";
 import UserPage from "./_root/pages/userpage";
+import Recommendation from "./_root/pages/recommendation";
 function App() {
   return (
     <main className="flex h-fit">
@@ -25,6 +26,7 @@ function App() {
           <Route path="/product/:productId" element={<ProductPage />} />
           <Route path="/region/state" element={<State/>}/>
           <Route path="/user" element={<UserPage/>}/>
+          <Route path="/search" element={<Recommendation/>}/>
         </Route>
       </Routes>
     </main>
