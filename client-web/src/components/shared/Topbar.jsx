@@ -271,7 +271,6 @@ export default function Topbar() {
                 <p className="bg-transparent flex-auto text-center text-white text-4xl rounded-md font-serif">
                   Heritage Haat
                 </p>
-                
               </div>
               <SheetContent
                 style={{ backgroundImage: `url(${floralbackground})` }}

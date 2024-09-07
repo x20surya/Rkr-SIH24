@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { ShoppingCart, Heart} from 'lucide-react';
 import { Button } from '../ui/button';
-const ProductCard = ({ product,size }) => {
+
+const ProductCardSeller = ({ product }) => {
   const [liked, setLiked] = useState(false);
 const rating=4;
   const toggleLike = () => {
@@ -9,8 +10,8 @@ const rating=4;
   };
 
   return (
-    <div className="relative p-5 border rounded-lg shadow-md">
-      <img className="w-full h-48 object-cover" src={product.image} alt={product.name} />
+    <div className="relative p-5 border-2 border-card rounded-lg shadow-md ">
+      <img className="w-full h-28 object-cover" src={product.image} alt={product.name} />
       <div className="absolute top-0 right-0 p-2 flex space-x-2">
         <Button onClick={toggleLike}>
           <Heart size={24} className={liked ? 'text-red-500' : 'text-gray-500'} />
@@ -19,11 +20,11 @@ const rating=4;
           <ShoppingCart size={24} />
         </Button>
       </div>
-      <div className="px-4 py-2">
+      <div className="">
 
         <div className="font-bold text-lg mb-1">{product.name}</div>
         <p className="text-gray-700 text-sm">${product.price}</p>
-        <div className='flex  -mb-5 justify-center relative bottom-5 lg:left-9'>
+        <div className='flex  -mb-5 justify-center relative bottom-5 lg:left-10'>
         {[1, 2, 3, 4, 5].map((star) => (
                             <svg
                                 key={star}
@@ -56,4 +57,4 @@ const rating=4;
   );
 };
 
-export default ProductCard;
+export default ProductCardSeller;
