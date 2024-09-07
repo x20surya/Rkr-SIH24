@@ -75,7 +75,7 @@ const Sellercard = () => {
                 
               <h1 className="text-3xl font-bold mt-3">Name</h1>
               <p className="text-sm font-medium text-center max-w-full lg:max-w-[60%]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>
-              <div className="flex flex-row gap-4  relative -left-full  max-sm:top-8 max-sm:-mt-8 sm:top-8 md:top-16 sm:mb-6 md:mb-5 sm:-mt-8 lg:left-0 lg:top-0 lg:mt-0">
+              <div className="flex flex-row gap-4 mb-4">
                 <Link>
                   <Facebook
                     color="white"
