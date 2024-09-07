@@ -1,4 +1,4 @@
-import React from 'react';
+
 import UserCard from "@/components/shared/usercard";
 import { Phone } from 'lucide-react';
 import { Map } from 'lucide-react';

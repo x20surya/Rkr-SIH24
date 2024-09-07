@@ -141,7 +141,7 @@ export default function State() {
                   alt=""
                   className="h-7 relative -top-20 "
                 />
-                <div className="relative -top-10 grid lg:grid-cols-3 grid-cols-2 gap-4  p-3 bg-white">
+                <div className="relative -top-10 grid lg:grid-cols-4 grid-cols-2 gap-4  p-3 bg-white">
                   {products.map((product, index) => (
                     <ProductCard key={index} product={product} />
                   ))}

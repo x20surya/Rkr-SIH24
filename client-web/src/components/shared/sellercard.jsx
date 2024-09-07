@@ -71,34 +71,34 @@ const Sellercard = () => {
             <div>
              <img src="https://picsum.photos/200" alt="" className="w-full lg:h-96 h-full" />
             </div>
-            <div className="flex flex-col items-center justify-center gap-3 p-2 bg-card">
+            <div className="flex flex-col items-center justify-center gap-3 pl-2 pr-2 bg-card">
                 
               <h1 className="text-3xl font-bold mt-3">Name</h1>
               <p className="text-sm font-medium text-center max-w-full lg:max-w-[60%]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>
-              <div className="flex flex-row gap-4 lg:mt-4">
+              <div className="flex flex-row gap-4  relative -left-full  max-sm:top-8 max-sm:-mt-8 sm:top-8 md:top-16 sm:mb-6 md:mb-5 sm:-mt-8 lg:left-0 lg:top-0 lg:mt-0">
                 <Link>
                   <Facebook
                     color="white"
-                    className="bg-primary rounded-lg  lg:h-10 lg:w-10 lg:p-2 sm:h-8 sm:w-8 sm:p-1"
+                    className="bg-primary rounded-lg  lg:h-10 lg:w-10 lg:p-2 max-sm:h-8 max-sm:w-8 max-sm:p-1 sm:h-8 sm:w-8 sm:p-1"
                   />
                 </Link>
                 <Link>
                   <Instagram
                     color="white"
-                    className="bg-primary rounded-lg p-1 lg:h-10 lg:w-10 lg:p-2 sm:h-8 sm:w-8 sm:p-1 "
+                    className="bg-primary rounded-lg p-1 lg:h-10 lg:w-10 lg:p-2 max-sm:h-8 max-sm:w-8 max-sm:p-1 sm:h-8 sm:w-8 sm:p-1"
                   />
                 </Link>
                 <Link>
                   <Twitter
                     color="white"
-                    className="bg-primary rounded-lg p-1 lg:h-10 lg:w-10 lg:p-2 sm:h-8 sm:w-8 sm:p-1 "
+                    className="bg-primary rounded-lg p-1 lg:h-10 lg:w-10 lg:p-2 max-sm:h-8 max-sm:w-8 max-sm:p-1 sm:h-8 sm:w-8 sm:p-1"
                   />
                 </Link>
               </div>
-              <Button className="w-24 h-8 lg:w-40 lg:h-10 lg:mt-5 mb-2">View Profile</Button>
+              <Button className="w-24 h-8 lg:w-40 lg:h-10 -mt-4 mb-2">View Profile</Button>
             </div>
           </div>
-          <div className="mt-4 flex w-full justify-center items-center rounded-lg max-sm:hidden sm:hidden lg:contents">
+          <div className="flex w-full justify-center items-center rounded-lg max-sm:hidden sm:hidden lg:contents relative -top-10 rounded-t-lg">
             <Carousel className="ml-[3.2rem] mr-[3.2rem] mt-3 rounded-lg mb-4">
               <CarouselContent className="bg-background">
                 {products.map((product, index) => (
