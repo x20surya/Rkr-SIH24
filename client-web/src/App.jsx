@@ -10,6 +10,7 @@ import ProductPage from "./_root/pages/ProductPage";
 import State from "./_root/pages/state";
 import UserPage from "./_root/pages/userpage";
 import Recommendation from "./_root/pages/recommendation";
+import BecomeAseller from "./_root/pages/BecomeASeller";
 function App() {
   return (
     <main className="flex h-fit">
@@ -17,16 +18,16 @@ function App() {
         <Route element={<AuthLayout />}>
           <Route path="/sign-in" element={<SignInForm />} />
           <Route path="/sign-up" element={<SignUpForm />} />
-          
         </Route>
-          <Route element={<RootLayout />}>
+        <Route element={<RootLayout />}>
           <Route index element={<Home />} />
-          <Route path="/region" element={<Region/>}/>
-          <Route path="/seller/:sellerId" element={<SellerInfo/>}/>
+          <Route path="/region" element={<Region />} />
+          <Route path="/seller/:sellerId" element={<SellerInfo />} />
           <Route path="/product/:productId" element={<ProductPage />} />
-          <Route path="/region/state" element={<State/>}/>
-          <Route path="/user" element={<UserPage/>}/>
-          <Route path="/search" element={<Recommendation/>}/>
+          <Route path="/region/state" element={<State />} />
+          <Route path="/user" element={<UserPage />} />
+          <Route path="/search" element={<Recommendation />} />
+          <Route path="/becomeaseller" element={<BecomeAseller />} />
         </Route>
       </Routes>
     </main>

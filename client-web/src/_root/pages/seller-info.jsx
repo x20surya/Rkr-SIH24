@@ -73,6 +73,7 @@ export default function SellerInfo(props) {
         if (response.data.error) {
           throw Error(response.data.error);
         }
+        console.log(response.data)
         setData(response.data);
       } catch (e) {
         setError(e.message);
@@ -95,7 +96,7 @@ export default function SellerInfo(props) {
       <Borderbluered />
 
       <div className="relative flex flex-col items-center justify-center mt-20">
-        <h1 className="text-center font-bold text-3xl">Name</h1>
+        <h1 className="text-center font-bold text-3xl">{data.user.first_name} {data.user.last_name}</h1>
         <div className="flex flex-row gap-4 items-center justify-center mt-4 ">
           <Link>
             <Facebook
@@ -118,8 +119,7 @@ export default function SellerInfo(props) {
         </div>
         <Button className="mt-4 w-40">Follow</Button>
         <p className="mt-3 mb-2 text-center text-lg font-semibold">
-          Detaiked description of user , his locality products he manufacture
-          etc
+          {data.seller.description}
         </p>
       </div>
       <Tabs
