@@ -3,7 +3,7 @@ import { userJWTAuthentication } from "../middleware/user.js";
 
 const router = Router()
 
-router.get("/place/product/:id",userJWTAuthentication , (req, res) => {
+router.post("/product/:id",userJWTAuthentication , (req, res) => {
     const pid = req.params.id
     const address = req.body.address
     
@@ -12,7 +12,7 @@ router.get("/place/product/:id",userJWTAuthentication , (req, res) => {
     const decode = jwt.decode(token)
     const userId = decode.id()
 
-        
+
 })
 
 export default router

@@ -66,7 +66,9 @@ router.post("/add",JWT_seller_authentication ,async (req, res) => {
 router.get("/getProduct",userJWTAuthentication , async (req, res) => {
     const pid = req.body.productId
     const product = await Product.findById(pid)
-    return product
+    return res.json({
+        product : product
+    })
 })
 
 router.post("/editProduct",JWT_seller_authentication ,productExists ,sellerHasProduct, async (req, res) => {
