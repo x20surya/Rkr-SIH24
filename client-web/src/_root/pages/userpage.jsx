@@ -6,6 +6,13 @@ import { Mail } from 'lucide-react';
 import { Progress } from "@/components/ui/progress"
 import { DataTable } from '@/components/shared/ordertable';
 import Wishlist from '@/components/user/wishlist';
+import Orders from '@/components/user/myorder';
+import Address from '@/components/user/myaddress';
+import Blogs from '@/components/user/viewblog';
+import Help from '@/components/useractions/help';
+import Privacy from '@/components/useractions/privacypolicy';
+import SignOut from '@/components/useractions/signout';
+import Editbtn from '@/components/useractions/update';
 export default function UserPage() {
   return (
     <div className="min-h-screen bg p-6 flex items-center justify-center w-full">
@@ -14,7 +21,7 @@ export default function UserPage() {
         <div className="bg-background p-6 rounded-lg shadow-lg">
   
         <div className="flex items-center justify-center">
-            <img src="https://picsum.photos/200/300" alt="user" className="w-32 h-32 mt-5 rounded-full" />
+            <img src="https://picsum.photos/200/300" alt="user" className="w-64 h-64 mt-5 rounded-full" />
             
         </div>
         <h1 className="scroll-m-20 mt-5 text-4xl font-bold tracking-tight text-center lg:text-5xl">
@@ -48,22 +55,39 @@ Aditya Raj
     </h2>
     <div className='grid grid-rows-2 grid-cols-2 gap-6 mt-4' >
       <div>
-   <Wishlist />
+   <Orders />
    </div>
    <div>
-   <Wishlist />
+    <Wishlist />
    </div>
    <div>
-   <Wishlist />
+   <Address />
    </div>
    <div>
-   <Wishlist />
+   <Blogs />
    </div>
 
    </div>
           </div>
           <div className=" p-6 rounded-lg shadow-lg">
-            <UserCard />
+          <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+      User Settings
+    </h2>
+          <div className='grid grid-rows-2 grid-cols-2 gap-6 mt-4' >
+      <div>
+        <Help />
+   </div>
+   <div>
+    <Privacy />
+   </div>
+   <div>
+    <SignOut />
+   </div>
+   <div>
+    <Editbtn />
+   </div>
+
+   </div>
           </div>
         </div>
       </div>

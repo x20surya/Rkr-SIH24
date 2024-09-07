@@ -6,13 +6,21 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
+  import { ListOrdered } from "lucide-react";
 export default function Orders() {
     return (
         <div className="bg-background p-6 rounded-lg shadow-lg">
           
     <Dialog>
       <DialogTrigger>
-        <button className="btn btn-primary">Your Orders</button>
+      <div className="flex flex-row gap-5">
+          <div>
+          <ListOrdered className="h-[18] w-[18]"/>
+          </div>
+          <div>
+          <button className="btn btn-primary">Your Orders</button>
+          </div>
+        </div>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

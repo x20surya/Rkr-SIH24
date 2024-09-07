@@ -18,7 +18,7 @@ export default function Address() {
           <Map className="h-[18] w-[18]"/>
           </div>
           <div>
-          <button className="btn btn-primary">Your Saved Address</button>
+          <button className="btn btn-primary">Saved Address</button>
           </div>
         </div>
       </DialogTrigger>
