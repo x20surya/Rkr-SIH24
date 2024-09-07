@@ -64,7 +64,7 @@ export default function Topbar() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Our Store</NavigationMenuTrigger>
                   <NavigationMenuContent
-                    className="bg-background"
+                    className="bg-white"
                     style={{ backgroundImage: `url(${floralbackground})` }}
                   >
                     <ul className="grid gap-y-1 gap-x-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -113,7 +113,7 @@ export default function Topbar() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Community</NavigationMenuTrigger>
                   <NavigationMenuContent
-                    className="bg-background"
+                    className="bg-white"
                     style={{ backgroundImage: `url(${floralbackground})` }}
                   >
                     <ul className="grid gap-y-1 gap-x-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -161,9 +161,9 @@ export default function Topbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Cart</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>Collections</NavigationMenuTrigger>
                   <NavigationMenuContent
-                    className="bg-background"
+                    className="bg-white"
                     style={{ backgroundImage: `url(${floralbackground})` }}
                   >
                     <ul className="grid gap-y-1 gap-x-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -212,7 +212,7 @@ export default function Topbar() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Profile</NavigationMenuTrigger>
                   <NavigationMenuContent
-                    className="rounded-md bg-background "
+                    className="rounded-md bg-white "
                     style={{ backgroundImage: `url(${floralbackground})` }}
                   >
                     <ul className="grid gap-y-1 gap-x-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
