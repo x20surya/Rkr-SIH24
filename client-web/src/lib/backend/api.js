@@ -88,3 +88,50 @@ export async function getProduct(id, token) {
       throw Error(e);
     });
 }
+
+export async function becomeASeller(
+  sellerName,
+  region,
+  description,
+  flat,
+  area,
+  pincode,
+  city,
+  phone,
+  title,
+  landmark
+) {
+  const token = localStorage.getItem("token");
+  await axios({
+    url: "/seller/signup",
+    method: "post",
+    baseURL: baseURL,
+    data: {
+      sellerName: sellerName,
+      region: region,
+      description: description,
+      address: {
+        flat: flat,
+        area: area,
+        pincode: pincode,
+        city: city,
+        phone: phone,
+        title: title,
+        landmark: landmark,
+      },
+    },
+    headers: {
+      authentication: `Pookie ${token}`,
+    },
+  })
+    .then((res) => {
+      if (res.data.error) {
+        throw new Error(res.data.error);
+      }
+      console.log(res.data);
+      return res.data;
+    })
+    .catch((e) => {
+      throw new Error(e);
+    });
+}

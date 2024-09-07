@@ -10,6 +10,7 @@ import {
 } from "@/constants/borders";
 import { floralbackground } from "@/constants/borders";
 import { sidepattern } from "@/constants/borders";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -126,7 +127,7 @@ export default function Home() {
             className="self-start border-4 border-primary-foreground"
           >
             {" "}
-            Shop Now
+            <Link to="/search">Shop Now</Link>
           </Button>
         </div>
       </div>
