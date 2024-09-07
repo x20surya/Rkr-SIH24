@@ -116,4 +116,10 @@ router.get("/getProductByFilter", userJWTAuthentication, async (req, res) => {
   return res.json({ products: products });
 });
 
+router.post("/searchEngine/:search", (req, res) => {
+  const search = req.params.search
+
+  
+})
+
 export default router;

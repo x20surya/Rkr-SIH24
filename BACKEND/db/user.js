@@ -48,6 +48,10 @@ const CollectionSchema = new mongoose.Schema({
 })
 
 const AddressSchema = new mongoose.Schema({
+    userId : {
+        type : mongoose.Schema.ObjectId,
+        ref  : "User"
+    },
     reciever : String,
     flat : String,
     area :String,
