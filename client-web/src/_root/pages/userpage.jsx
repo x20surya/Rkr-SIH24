@@ -1,4 +1,4 @@
-import React from 'react';
+
 import UserCard from "@/components/shared/usercard";
 import { Phone } from 'lucide-react';
 import { Map } from 'lucide-react';
@@ -10,8 +10,8 @@ import Orders from '@/components/user/myorder';
 import Address from '@/components/user/myaddress';
 import Blogs from '@/components/user/viewblog';
 import Help from '@/components/useractions/help';
-import Privacy from '@/components/useractions/privacypolicy';
 import SignOut from '@/components/useractions/signout';
+import Policy from '@/components/useractions/policy';
 import Editbtn from '@/components/useractions/update';
 export default function UserPage() {
   return (
@@ -78,7 +78,7 @@ Aditya Raj
         <Help />
    </div>
    <div>
-    <Privacy />
+   <Policy />
    </div>
    <div>
     <SignOut />
