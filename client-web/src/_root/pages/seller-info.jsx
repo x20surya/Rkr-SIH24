@@ -15,9 +15,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 export default function SellerInfo(props) {
   return (
-    <div className="h-[100%] w-full ">
-      <div className="h-48 lg:h-60 bg-card-foreground flex flex-col items-center justify-center">
-        <div className="h-40 w-40 lg:h-[16rem] lg:w-60 bg-card relative top-20 lg:top-32 rounded-[50%]"></div>
+    <div className="h-[100%] w-full relative -top-8">
+      <div className=" h-60 bg-card-foreground flex flex-col items-center justify-center">
+        <div className="h-60 w-60  bg-card relative top-32  rounded-[50%]"></div>
       </div>
       <Borderbluered />
 
