@@ -7,7 +7,7 @@ import {
     DialogTrigger,
   } from "@/components/ui/dialog"
   import { EarthLock } from "lucide-react";
-export default function Privacy() {
+export default function Policy() {
     return (
         <div className="bg-background p-6 rounded-lg shadow-lg">
           

@@ -30,7 +30,6 @@ router.post("/product/:id",userJWTAuthentication , (req, res) => {
             quantity,
             id : pid
         }]
-
     })
 })
 

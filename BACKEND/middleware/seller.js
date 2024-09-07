@@ -1,6 +1,15 @@
 import jwt from "jsonwebtoken"
 import { Seller } from "../db/seller.js"
 
+export const userCheckup = (req, res, next) => {
+    const auth = req.headers.authentication;
+    const token = auth.split(" ")[1];
+    const decode = jwt.decode(token);
+    const id = decode.id;
+
+
+}
+
 export const JWT_seller_authentication = async (req, res, next) => {
     const auth = req.headers.authentication
     const token = auth.split(" ")[1]
