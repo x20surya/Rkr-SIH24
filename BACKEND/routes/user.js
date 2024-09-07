@@ -147,10 +147,36 @@ router.post("/addList",userJWTAuthentication, (req, res) => {
     })
 })
 
-router.post("/addAddress",userJWTAuthentication ,(req, res) => {
+router.post("/addAddress",userJWTAuthentication ,async (req, res) => {
+    const auth = req.headers.authentication;
+    const token = auth.split(" ")[1];
+    const decode = jwt.decode(token);
+    const userId = decode.id;
     const address = req.body.address
-    const add = new Address(address)
+
+    const obj = {
+        userId ,
+        reciever : address.reciever,
+        flat : address.flat,
+        area : address.area,
+        pincode : address.pincode,
+        city : address.city,
+        phone : address.phone,
+        title : address.title,
+        landmark : address.landmark
+    }
+    const add = new Address(obj)
+
+    const check = await Address.findOne(obj)
+    if(check){
+        return res.json({
+            error : "Address already exists"
+        })
+    }
     add.save()
+    return res.json({
+        id : add.id
+    })
 })
 
 router.post("/editAddress/:id",userJWTAuthentication ,async (req, res) => {
