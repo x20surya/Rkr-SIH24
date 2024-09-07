@@ -10,19 +10,83 @@ import {
 } from "@/constants/borders";
 import Borderbluered from "@/components/shared/Borderbluered";
 import { Facebook, Instagram, Twitter, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/shared/productcard";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { baseURL } from "@/lib/backend/api";
 
 export default function SellerInfo(props) {
+  const { sellerId } = useParams();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const products = [
-    { id: 1, name: 'Product 1', price: 100, image: 'https://picsum.photos/200' },
-    { id: 2, name: 'Product 2', price: 200, image: 'https://picsum.photos/200' },
-    { id: 3, name: 'Product 3', price: 300, image: 'https://picsum.photos/200' },
-    { id: 4, name: 'Product 4', price: 400, image: 'https://picsum.photos/200' },
-    { id: 5, name: 'Product 5', price: 500, image: 'https://picsum.photos/200' }
-];
+    {
+      id: 1,
+      name: "Product 1",
+      price: 100,
+      image: "https://picsum.photos/200",
+    },
+    {
+      id: 2,
+      name: "Product 2",
+      price: 200,
+      image: "https://picsum.photos/200",
+    },
+    {
+      id: 3,
+      name: "Product 3",
+      price: 300,
+      image: "https://picsum.photos/200",
+    },
+    {
+      id: 4,
+      name: "Product 4",
+      price: 400,
+      image: "https://picsum.photos/200",
+    },
+    {
+      id: 5,
+      name: "Product 5",
+      price: 500,
+      image: "https://picsum.photos/200",
+    },
+  ];
+  useEffect(() => {
+    const fetchdata = async () => {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await axios({
+          url: "user/getSeller",
+          method: "post",
+          baseURL: baseURL,
+          data: {
+            sellerId: sellerId,
+          },
+          headers: {
+            authentication: `Pookie ${token}`,
+          },
+        });
+        if (response.data.error) {
+          throw Error(response.data.error);
+        }
+        setData(response.data);
+      } catch (e) {
+        setError(e.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchdata();
+  }, [sellerId]);
+
+  if (loading) return <div>Loading..</div>;
+
+  if (error) return <div>Error : {error}</div>;
+
   return (
     <div className="h-[100%] w-full relative -top-8">
       <div className=" h-60 bg-card-foreground flex flex-col items-center justify-center">
@@ -87,13 +151,15 @@ export default function SellerInfo(props) {
                 className="relative rotate-180"
               />
             </div>
-            <p className="relative -top-20 text-center text-4xl font-bold z-10">Products</p>
+            <p className="relative -top-20 text-center text-4xl font-bold z-10">
+              Products
+            </p>
             <img src={slateflower1} alt="" className="h-7 relative -top-20 " />
             <div className="relative -top-12 grid lg:grid-cols-4 grid-cols-2 gap-4 p-3">
-                {products.map((product ,index)=>(
-                  <ProductCard key={index} product={product} />
-                ))}
-                </div>
+              {products.map((product, index) => (
+                <ProductCard key={index} product={product} />
+              ))}
+            </div>
           </div>
         </TabsContent>
         <TabsContent
@@ -101,7 +167,7 @@ export default function SellerInfo(props) {
           className="w-screen flex items-center justify-center "
         >
           <div className="w-[95%] h-[20rem] bg-white rounded-lg flex flex-col mb-8">
-          <div className="flex flex-row justify-between ">
+            <div className="flex flex-row justify-between ">
               <img
                 src={complexflower1}
                 alt="flower"
@@ -113,11 +179,11 @@ export default function SellerInfo(props) {
                 className="relative rotate-180"
               />
             </div>
-            <p className="relative -top-20 text-center text-4xl font-bold z-10">Blogs</p>
+            <p className="relative -top-20 text-center text-4xl font-bold z-10">
+              Blogs
+            </p>
             <img src={slateflower1} alt="" className="h-6 relative -top-20 " />
-            <div>
-              
-            </div>
+            <div></div>
           </div>
         </TabsContent>
       </Tabs>
