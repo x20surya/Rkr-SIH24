@@ -63,7 +63,7 @@ router.post("/add",JWT_seller_authentication ,async (req, res) => {
     })
 })
 
-router.get("/getProduct",userJWTAuthentication , async (req, res) => {
+router.post("/getProduct",userJWTAuthentication , async (req, res) => {
     const pid = req.body.productId
     const product = await Product.findById(pid)
     return res.json({
@@ -78,6 +78,10 @@ router.post("/editProduct",JWT_seller_authentication ,productExists ,sellerHasPr
     const product = await Product.findByIdAndUpdate(pid, new_prod)
     product.save()
     return res.json(await Product.findById(pid))
+}) 
+
+router.get("/recommendedOrders" , userJWTAuthentication, (req, res) => {
+    
 })
 
 router.get("/getProductByFilter",  userJWTAuthentication,async (req, res) => {

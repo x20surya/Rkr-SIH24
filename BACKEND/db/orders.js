@@ -5,7 +5,10 @@ env.config()
 const db = mongoose.createConnection(`${process.env.MONGOBD}ORDERS`)
 
 const OrderSchema = new mongoose.Schema({
-    address : String,
+    address : {
+        type : mongoose.Schema.ObjectId,
+        ref : "Address"
+    },
     phone : Number,
     name : String,
     price : String,

@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { Lists, User } from "../db/user.js";
+import { Address, Lists, User } from "../db/user.js";
 import jwt from "jsonwebtoken"
 import mongoose from "mongoose";
 import bcrypt from "bcrypt"
 import { emailCheckUp, emailVerification, userJWTAuthentication } from "../middleware/user.js";
 import { listAdder, listEditor } from "../services/list.js";
+import { Seller } from "../db/seller.js";
 
 const router = Router()
 
@@ -143,6 +144,35 @@ router.post("/addList",userJWTAuthentication, (req, res) => {
     list.save()
     return res.json({
         msg : "Added"
+    })
+})
+
+router.post("/addAddress",userJWTAuthentication ,(req, res) => {
+    const address = req.body.address
+    const add = new Address(address)
+    add.save()
+})
+
+router.post("/editAddress/:id",userJWTAuthentication ,async (req, res) => {
+    const edit = req.body.edit
+
+    const addressId = req.body.id
+
+    const address = await Address.findByIdAndUpdate(addressId, edit)
+    address.save()
+
+    return res.json({
+        msg : "Edited"
+    })
+})
+
+router.post("/getSeller", userJWTAuthentication, async (req, res) => {
+    const sellerId = req.body.sellerId
+
+    const seller = await Seller.findById(sellerId)
+
+    return res.json({
+        seller
     })
 })
 

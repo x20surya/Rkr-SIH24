@@ -12,7 +12,6 @@ router.post("/product/:id",userJWTAuthentication , (req, res) => {
     const decode = jwt.decode(token)
     const userId = decode.id()
 
-
 })
 
 export default router
