@@ -2,6 +2,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AccordionComponent from "./accordion"
 import UserReviewCard from "./userreviewcard"
 import UserReviewsList from "./scrollarea"
+
+
 export default function TabsComponent() {
     return(
     <Tabs defaultValue="description" className="w-full mt-10">
@@ -20,6 +22,7 @@ export default function TabsComponent() {
   <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-2xl">
         User Reviews
       </h1>
+      
           <UserReviewsList />
         </TabsContent>
 </Tabs>)

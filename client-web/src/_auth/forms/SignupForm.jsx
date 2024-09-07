@@ -22,18 +22,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { createUser } from "@/lib/backend/api";
 
 const schema = z.object({
-  useraname: z.string().min(3),
+  firstName: z.string().min(1),
+  lastName: z.string().min(1),
   email: z.string().email(),
   password: z.string().min(8),
 });
 
 export default function SignUpForm() {
-  
   const form = useForm({
     defaultValues: {
-      username: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
     },
@@ -52,7 +54,24 @@ export default function SignUpForm() {
     }
   }, [form.formState.errors.root]);
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    try {
+      const res = await createUser(
+        data.email,
+        data.password,
+        data.firstName,
+        data.lastName
+      );
+      toast({
+        title: "Verification Email sent to " + data.email,
+      });
+    } catch (e) {
+      console.log(e);
+      form.setError("root", {
+        message: e.message,
+      });
+    }
+  };
 
   return (
     <div>
@@ -70,29 +89,46 @@ export default function SignUpForm() {
                 <>
                   <CardContent>
                     <FormItem>
-                      <FormLabel>Enter Username</FormLabel>
+                      <FormLabel>Enter First Name</FormLabel>
                       <FormControl>
                         <Input
-                          {...form.register("username")}
+                          {...form.register("firstName")}
                           type="text"
-                          placeholder="Username"
+                          placeholder="First Name"
                           className={
-                            form.formState.errors.username
+                            form.formState.errors.firstName
                               ? "border-red-400 border-2"
                               : ""
                           }
                         ></Input>
                       </FormControl>
-                      {form.formState.errors.username && (
+                      {form.formState.errors.firstName && (
                         <FormMessage className=" text-start font-mono pt-0 text-xs">
-                          {form.formState.errors.username.message}
+                          {form.formState.errors.firstName.message}
+                        </FormMessage>
+                      )}
+                      <FormLabel>Enter Last Name</FormLabel>
+                      <FormControl>
+                        <Input
+                          {...form.register("lastName")}
+                          type="text"
+                          placeholder="Last Name"
+                          className={
+                            form.formState.errors.lastName
+                              ? "border-red-400 border-2"
+                              : ""
+                          }
+                        ></Input>
+                      </FormControl>
+                      {form.formState.errors.lastName && (
+                        <FormMessage className=" text-start font-mono pt-0 text-xs">
+                          {form.formState.errors.lastName.message}
                         </FormMessage>
                       )}
                       <FormLabel>Enter Email Address</FormLabel>
                       <FormControl>
                         <Input
                           {...form.register("email")}
-                          type="email"
                           placeholder="Email"
                           className={
                             form.formState.errors.email
