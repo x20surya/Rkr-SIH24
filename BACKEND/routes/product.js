@@ -88,7 +88,6 @@ router.post(
 );
 
 router.post("/recommendedOrders", async (req, res) => {
-    console.log("Recommended Orders")
   
   axios({
     url: "/allcollabrativeknn", 
@@ -100,7 +99,7 @@ router.post("/recommendedOrders", async (req, res) => {
   })
     .then((response) => {
       return res.json({
-        response : response.data
+        data : response.data
       })
     })
     .catch((err) => {

@@ -9,10 +9,12 @@ const SellerSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Users'
     },
+    sellerName : String,
+    region : String,
     description : String,
-    location : {
-        latitude : String,
-        longitude : String
+    address : {
+        type : mongoose.Schema.ObjectId,
+        ref : "Address"
     },
     verified : Boolean,
     products : [{

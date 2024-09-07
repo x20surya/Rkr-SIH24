@@ -21,6 +21,8 @@ export default function Wishlist() {
           <button className="btn btn-primary">Your Wishlist</button>
           </div>
         </div>
+       
+        
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

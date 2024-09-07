@@ -12,7 +12,7 @@ const OrderSchema = new mongoose.Schema({
     phone : Number,
     name : String,
     price : String,
-    expetedDeliver : String,
+    expetedDelivery : String,
     product : [{
         quantity : Number,
         id : {
