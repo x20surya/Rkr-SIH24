@@ -2,24 +2,39 @@ import CarousalComponent from "@/components/shared/ProductCarousel"
 import { useState } from "react";
 import TabsComponent from "@/components/shared/Tabs";
 import AccordionComponent from "@/components/shared/accordion";
+import { Button } from "@/components/ui/button";
+import ProductCard from "@/components/shared/productcard";
+import SimilarProduct from "@/components/shared/similarproduct";
 export default function ProductPage() {
   const productrating=4.4;
     const rating=Math.round(productrating);
-
+    const product = {   
+        name: "Bhujia",   
+        price: '100.00',   
+        image: "https://picsum.photos/200" 
+        };
     
-    return (
-        <section>
-        <div className="ml-16 flex flex-row" >
-            <div>
-     <CarousalComponent />
-     </div>
+    return (<>
+        <section className="flex flex-col">
+            <section>
+      <div className="ml-4 md:ml-16 flex flex-col md:flex-row">
+                <div className="flex flex-col">
+                    <div>
+                        <CarousalComponent />
+                    </div>
+                    <div className="flex flex-row justify-center md:justify-start relative lg:ml-10">
+            <Button className="mt-4 ml-4" variant="secondary">Add to Cart</Button>
+            <Button className="mt-4 ml-4" variant="default">Buy Now</Button>
+          </div>
+                </div>
 
-     <div className="mr-5">
-     <h2 className="mt-10 scroll-m-20  pb-2 text-3xl font-bold tracking-tight transition-colors first:mt-14 ">
+
+     <div className="mr-0 md:mr-5">
+     <h2 className="mt-4 md:mt-10 scroll-m-20 pb-2 text-xl md:ml-0 md:relative md:left-0 md:text-2xl font-bold tracking-tight transition-colors first:mt-14">
      Classmate Pulse 6 Subject Spiral Notebook - Pack of 1 | Single Line | 500 Pages | A4-29.7cm x 21.0cm | Attractive Cover Designs | Soft Cover | Ideal for College Students and Professionals
       </h2>
-      <div className="flex flex-row">
-      <div className="flex mt-4">
+      <div className="flex flex-col md:flex-row">
+      <div className="flex mt-4 justify-center md:justify-start">
                         {[1, 2, 3, 4, 5].map((star) => (
                             <svg
                                 key={star}
@@ -33,8 +48,8 @@ export default function ProductPage() {
                             </svg>
                         ))}
                     </div>
-                    <div className="relative top-3.5 left-1.5" >
-                    <small className="text-sm font-medium leading-none">{productrating}</small>
+                    <div className="relative top-3.5 left-0  text-center " >
+                    <small className=" hidden lg:block text-sm font-medium leading-none   lg:relative lg:top-1.5 lg:left-2">{productrating}</small>
                     </div>
                     </div>
       <div>
@@ -52,6 +67,15 @@ export default function ProductPage() {
     
       </div>
         </div>
+       
         </section>
+       <section>
+        <div className="ml-4 md:ml-16 mt-4 mb-6 md:mt-10">
+</div>
+<SimilarProduct/>
+<CarousalComponent />
+       </section>
+       </section>
+      </>
     )
 }

@@ -4,7 +4,12 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "@/components/ui/accordion"
+import { Input } from "../ui/input"
+import { Button } from "../ui/button"
+import { useToast } from "@/hooks/use-toast"
+import { ToastAction } from "../ui/toast"
 export default function AccordionComponent() {  
+    const {toast}=useToast()
     return (
         <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
@@ -23,8 +28,25 @@ export default function AccordionComponent() {
         <AccordionItem value="item-3">
           <AccordionTrigger>Delivery & Returns</AccordionTrigger>
           <AccordionContent>
-            Yes. It&apos;s animated by default, but you can disable it if you
-            prefer.
+            <div className="flex flex-row gap-5">
+          <div className="text-sm font-normal relative top-2">Shipping Time</div>
+          <div>
+          <Input className="w-40" placeholder="Enter your Pincode"/>
+          </div>
+          <div>
+            <Button variant="secondary"
+            onClick={() => {
+                toast({
+                  title: "Your Estimated Delivery Time",
+                  description: "Your order will be delivered in 3-5 business days",
+                  action: (
+                    <ToastAction altText="Close">Close</ToastAction>
+                  ),
+                })
+              }}
+            >Check</Button>
+          </div>
+          </div>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
