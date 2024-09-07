@@ -13,7 +13,16 @@ import { Facebook, Instagram, Twitter, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
+import ProductCard from "@/components/shared/productcard";
+
 export default function SellerInfo(props) {
+  const products = [
+    { id: 1, name: 'Product 1', price: 100, image: 'https://picsum.photos/200' },
+    { id: 2, name: 'Product 2', price: 200, image: 'https://picsum.photos/200' },
+    { id: 3, name: 'Product 3', price: 300, image: 'https://picsum.photos/200' },
+    { id: 4, name: 'Product 4', price: 400, image: 'https://picsum.photos/200' },
+    { id: 5, name: 'Product 5', price: 500, image: 'https://picsum.photos/200' }
+];
   return (
     <div className="h-[100%] w-full relative -top-8">
       <div className=" h-60 bg-card-foreground flex flex-col items-center justify-center">
@@ -65,7 +74,7 @@ export default function SellerInfo(props) {
           value="Products"
           className="w-screen flex  items-center justify-center "
         >
-          <div className="w-[95%] h-[20rem] bg-white rounded-lg flex flex-col  mt-2 mb-8">
+          <div className="w-[95%]  bg-white rounded-lg flex flex-col  mt-2 mb-8">
             <div className="flex flex-row justify-between ">
               <img
                 src={complexflower1}
@@ -78,8 +87,13 @@ export default function SellerInfo(props) {
                 className="relative rotate-180"
               />
             </div>
-            <p className="relative -top-20 text-center text-2xl font-bold z-10">Products</p>
-            <img src={slateflower1} alt="" className="h-5 relative -top-20 " />
+            <p className="relative -top-20 text-center text-4xl font-bold z-10">Products</p>
+            <img src={slateflower1} alt="" className="h-7 relative -top-20 " />
+            <div className="relative -top-12 grid lg:grid-cols-4 grid-cols-2 gap-4 p-3">
+                {products.map((product ,index)=>(
+                  <ProductCard key={index} product={product} />
+                ))}
+                </div>
           </div>
         </TabsContent>
         <TabsContent
@@ -99,8 +113,11 @@ export default function SellerInfo(props) {
                 className="relative rotate-180"
               />
             </div>
-            <p className="relative -top-20 text-center text-2xl font-bold z-10">Blogs</p>
-            <img src={slateflower1} alt="" className="h-4 relative -top-20 " />
+            <p className="relative -top-20 text-center text-4xl font-bold z-10">Blogs</p>
+            <img src={slateflower1} alt="" className="h-6 relative -top-20 " />
+            <div>
+              
+            </div>
           </div>
         </TabsContent>
       </Tabs>
