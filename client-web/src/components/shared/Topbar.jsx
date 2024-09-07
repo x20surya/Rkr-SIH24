@@ -32,11 +32,8 @@ import { indianwomen, roseflower } from "@/constants/borders";
 import { Button } from "../ui/button";
 import Headroom from "react-headroom";
 import { backgroundflowers } from "@/constants/borders";
-import { ChevronDown, MenuIcon } from "lucide-react";
+import { ChevronDown, MenuIcon, Search } from "lucide-react";
 import { Link } from "react-router-dom";
-
-
-
 
 export default function Topbar() {
   return (
@@ -156,7 +153,8 @@ export default function Topbar() {
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
                         <div className="flex flex-1 flex-row">
-                          About Us<ChevronDown />{" "}
+                          About Us
+                          <ChevronDown />{" "}
                         </div>
                       </Link>
                     </ul>
@@ -205,7 +203,7 @@ export default function Topbar() {
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
                         <div className="flex flex-1 flex-row">
-                        Banarsi Saree <ChevronDown />{" "}
+                          Banarsi Saree <ChevronDown />{" "}
                         </div>
                       </Link>
                     </ul>
@@ -245,7 +243,7 @@ export default function Topbar() {
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
                         <div className="flex flex-1 flex-row">
-                        Your Wishlist <ChevronDown />{" "}
+                          Your Wishlist <ChevronDown />{" "}
                         </div>
                       </Link>
                       <Link
@@ -263,39 +261,60 @@ export default function Topbar() {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <div className="flex lg:hidden">
+          <div className="flex lg:hidden ">
             <Sheet>
               <SheetTrigger>
                 <MenuIcon color="white" size={35} strokeWidth={3} />
               </SheetTrigger>
+              <div className=" flex flex-1 flex-row justify-between items-center gap-x-2 ">
+                
+                <p className="bg-transparent flex-auto text-center text-white text-4xl rounded-md font-serif">
+                  Heritage Haat
+                </p>
+                
+              </div>
               <SheetContent
-               style={{ backgroundImage: `url(${floralbackground})` }}
+                style={{ backgroundImage: `url(${floralbackground})` }}
                 side="left"
               >
                 <SheetHeader>
                   <SheetTitle>
                     <div className="m-3">
-                      <div className=" flex flex-row justify-center align-center gap-x-2 bg-accent border-1 rounded-md p-1 ">
+                      <div
+                        style={{ backgroundImage: `url(${floralbackground})` }}
+                        className=" flex flex-row justify-center align-center gap-x-2 bg-background border-1 rounded-md p-1 "
+                      >
                         <img
-                          className="h-9 w-9 border-1 rounded-full bg-primary"
-                          src={indianwomen}
+                          className="h-100 w-100 border-1 rounded-full bg-primary"
+                          src={complexflower1}
                         />
                       </div>
-                      <Borderbluered />
                     </div>
                   </SheetTitle>
                   <SheetDescription>
                     <div className=" flex flex-1 flex-col justify-center gap-y-10">
-                      <Button style={{ backgroundImage: `url(${floralbackground})` }} className="text-3xl bg-background hover:bg-[rgba(0,0,0,0.2)]">
+                      <Button
+                        style={{ backgroundImage: `url(${floralbackground})` }}
+                        className="text-3xl bg-background hover:bg-[rgba(0,0,0,0.2)]"
+                      >
                         Our Store <ChevronDown />
                       </Button>
-                      <Button style={{ backgroundImage: `url(${floralbackground})` }} className="text-3xl bg-background hover:bg-[rgba(0,0,0,0.2)]">
+                      <Button
+                        style={{ backgroundImage: `url(${floralbackground})` }}
+                        className="text-3xl bg-background hover:bg-[rgba(0,0,0,0.2)]"
+                      >
                         Community <ChevronDown />
                       </Button>
-                      <Button style={{ backgroundImage: `url(${floralbackground})` }} className="text-3xl bg-background hover:bg-[rgba(0,0,0,0.2)]">
+                      <Button
+                        style={{ backgroundImage: `url(${floralbackground})` }}
+                        className="text-3xl bg-background hover:bg-[rgba(0,0,0,0.2)]"
+                      >
                         Cart <ChevronDown />
                       </Button>
-                      <Button style={{ backgroundImage: `url(${floralbackground})` }} className="text-3xl bg-background hover:bg-[rgba(0,0,0,0.2)]">
+                      <Button
+                        style={{ backgroundImage: `url(${floralbackground})` }}
+                        className="text-3xl bg-background hover:bg-[rgba(0,0,0,0.2)]"
+                      >
                         Profile <ChevronDown />
                       </Button>
                     </div>

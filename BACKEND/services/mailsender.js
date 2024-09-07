@@ -32,6 +32,7 @@ export const sendMail = (email) => {
         if(err){
             throw err
         }
+        console.log("Success")
         response.end()
     })
 

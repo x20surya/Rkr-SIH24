@@ -21,8 +21,8 @@ function App() {
           <Route element={<RootLayout />}>
           <Route index element={<Home />} />
           <Route path="/region" element={<Region/>}/>
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/region/state/seller-id" element={<SellerInfo/>} />
+          <Route path="/seller/:sellerId" element={<SellerInfo/>}/>
+          <Route path="/product/:productId" element={<ProductPage />} />
           <Route path="/region/state" element={<State/>}/>
           <Route path="/user" element={<UserPage/>}/>
         </Route>

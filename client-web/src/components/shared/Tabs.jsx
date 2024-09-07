@@ -4,7 +4,7 @@ import UserReviewCard from "./userreviewcard"
 import UserReviewsList from "./scrollarea"
 
 
-export default function TabsComponent() {
+export default function TabsComponent({description, dimensions}) {
     return(
     <Tabs defaultValue="description" className="w-full mt-10">
   <TabsList className="w-full">
@@ -16,7 +16,7 @@ export default function TabsComponent() {
   <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-2xl">
         Description
       </h1>
-           <AccordionComponent />
+           <AccordionComponent description={description} dimensions={dimensions} />
         </TabsContent>
         <TabsContent value="reviews" className="p-4  rounded-lg shadow-md mt-5 mb-5">
   <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-2xl">

@@ -1,17 +1,19 @@
-import mongoose from "mongoose"
+import mongoose, { mongo } from "mongoose"
 import env from "dotenv"
 env.config()
 
 const db = mongoose.createConnection(`${process.env.MONGOBD}USERS`)
 
 const UserSchema = new mongoose.Schema({
-    address : [String],
+    address : [{
+        type : mongoose.Schema.ObjectId,
+        ref : "Address"
+    }],
     first_name : String,
     last_name : String,
     password : String,
     email : String,
     emailVerified : Boolean,
-    address : [String],
     wishlist : {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Collection'
@@ -45,6 +47,18 @@ const CollectionSchema = new mongoose.Schema({
     }]
 })
 
+const AddressSchema = new mongoose.Schema({
+    reciever : String,
+    flat : String,
+    area :String,
+    pincode : String,
+    city : String,
+    phone : Number,
+    title : String,
+    landmark : String
+})
+
 export const User = db.model("User", UserSchema)
 export const Lists = db.model("Collection", CollectionSchema)
+export const Address = db.model("Address", AddressSchema)
 
