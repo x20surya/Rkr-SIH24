@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3000";
+export const baseURL = "http://localhost:3000";
 
 export async function createUser(email, password, firstName, lastName) {
   await axios({
@@ -64,4 +64,27 @@ export async function signIn(email, password) {
 
 export function signOut() {
   localStorage.setItem("token", "");
+}
+
+export async function getProduct(id, token) {
+  await axios({
+    url: "product/getProduct",
+    method: "post",
+    baseURL: baseURL,
+    data: {
+      productId: id,
+    },
+    headers: {
+      authentication: `Pookie ${token}`,
+    },
+  })
+    .then((res) => {
+      if (res.data.error) {
+        throw new Error(res.data.error);
+      }
+      return res;
+    })
+    .catch((e) => {
+      throw Error(e);
+    });
 }

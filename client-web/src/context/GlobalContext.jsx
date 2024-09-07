@@ -5,16 +5,21 @@ export const useGlobalContext = () => useContext(GlobalContext);
 
 const GlobalProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState("");
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
-    if (storedToken) {
+    if (storedToken.length === "") {
+      setToken("");
+      setIsAuthenticated(false);
+    } else {
       setToken(storedToken);
+
       setIsAuthenticated(true);
     }
   }, []);
+
 
   return (
     <GlobalContext.Provider
