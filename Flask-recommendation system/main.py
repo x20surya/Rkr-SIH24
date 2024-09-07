@@ -1,6 +1,8 @@
 from flask import Flask,render_template, request, jsonify
 from pymongo.mongo_client import MongoClient
 from bson.objectid import ObjectId
+from flask import request
+
 from pymongo.server_api import ServerApi
 from flask_cors import CORS
 from bayesian_avg_ratings import calculate_bayesian_avg_ratings
@@ -9,6 +11,7 @@ from content import content_based_filtering
 import pandas as pd
 from matrix_factorization_method import matrix_factorization
 from dotenv import load_dotenv
+from collabrative_knn_for_multiple import collabrativeknnall
 load_dotenv()
 import os
 uri = os.getenv('uri')
@@ -68,7 +71,12 @@ def matrixbasedrecommend():
     product_stats = matrix_factorization()
     print(product_stats)
     return jsonify(product_stats)
- 
+@app.route('/allcollabrativeknn', methods=['GET']) 
+def allcollabrativeknn():
+    getids=request.headers.get('ids')
+    print(getids)
+    product_stats = collabrativeknnall(product_ids=[1001,1002,1003])
+    return jsonify(product_stats)   
     
 
 if __name__=='__main__':

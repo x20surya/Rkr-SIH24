@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 from scipy.sparse import csr_matrix
 from sklearn.neighbors import NearestNeighbors
 print("Imported all the required libraries")
-def collabrative_knn(ratings_file='ratings.csv', products_file='products.csv'):
-    print("Inside collabrative_knn")
+def collabrativeknnall(ratings_file='ratings.csv', products_file='products.csv', product_ids=[]):
+    print("Inside collabrativeknnall")
 
     ratings = pd.read_csv('ratings.csv')
     products = pd.read_csv('products.csv')
@@ -52,6 +52,7 @@ def collabrative_knn(ratings_file='ratings.csv', products_file='products.csv'):
     def find_similar_products(product_ids, X, product_mapper, product_inv_mapper, k, metric='cosine'):
         X = X.T
         results = {}
+        
     
         for product_id in product_ids:
            neighbour_ids = []
@@ -73,12 +74,14 @@ def collabrative_knn(ratings_file='ratings.csv', products_file='products.csv'):
     
         return results
 
-    product_ids = [1001]
-    similar_products_dict = find_similar_products(product_ids, X, product_mapper, product_inv_mapper, k=20)
+   
+    similar_products_dict = find_similar_products(product_ids, X, product_mapper, product_inv_mapper, k=10)
+    all_similar = []
 
     for product_id, similar_products in similar_products_dict.items():
        
        similar_products = [int(i) for i in similar_products]
+       all_similar.append(similar_products)
        print(f"Similar products for {product_id}: {similar_products}")
 
     product_tags = dict(zip(products['productId'], products['productName']))
@@ -89,9 +92,9 @@ def collabrative_knn(ratings_file='ratings.csv', products_file='products.csv'):
     for i in similar_products:
        print(product_tags[i])
 
-    return similar_products
+    return all_similar
 
-print(collabrative_knn())
+print(collabrativeknnall(ratings_file='ratings.csv', products_file='products.csv', product_ids=[1001,1002,1003]))
    
     
         
