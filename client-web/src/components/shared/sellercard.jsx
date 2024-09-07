@@ -64,18 +64,17 @@ const products = [
 
 const Sellercard = () => {
   return (
-    <div>
-      <Card className="border-none bg-background">
+      <Card className="border-none bg-card shadow-md ">
         <CardContent className="flex flex-col p-0">
           <div className="h-full w-full  grid grid-cols-2 ">
             <div>
-             <img src="https://picsum.photos/200" alt="" className="w-full lg:h-96 h-full" />
+             <img src="https://picsum.photos/200" alt="" className="w-full lg:h-80 h-full" />
             </div>
-            <div className="flex flex-col items-center justify-center gap-3 pl-2 pr-2 bg-card">
+            <div className="flex flex-col items-center justify-center gap-3 pl-2 pr-2 lg:p-0 bg-card">
                 
               <h1 className="text-3xl font-bold mt-3">Name</h1>
-              <p className="text-sm font-medium text-center max-w-full lg:max-w-[60%]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>
-              <div className="flex flex-row gap-4 mb-4">
+              <p className="text-sm font-medium text-center max-w-full lg:max-w-[90%]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>
+              <div className="flex flex-row gap-4 mb-3">
                 <Link>
                   <Facebook
                     color="white"
@@ -98,12 +97,12 @@ const Sellercard = () => {
               <Button className="w-24 h-8 lg:w-40 lg:h-10 -mt-4 mb-2">View Profile</Button>
             </div>
           </div>
-          <div className="flex w-full justify-center items-center rounded-lg max-sm:hidden sm:hidden lg:contents relative -top-10 rounded-t-lg">
-            <Carousel className="ml-[3.2rem] mr-[3.2rem] mt-3 rounded-lg mb-4">
-              <CarouselContent className="bg-background">
+          <div className="flex  justify-center items-center rounded-lg max-sm:hidden sm:hidden lg:contents">
+            <Carousel className="ml-[3.2rem] mr-[3.2rem] mt-2 rounded-lg mb-2">
+              <CarouselContent className="bg-card">
                 {products.map((product, index) => (
                   <CarouselItem className=" md:basis-1/2 lg:basis-1/3">
-                    <ProductCard key={index} product={product} />
+                    <ProductCard key={index} product={product}/>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -113,7 +112,6 @@ const Sellercard = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
   );
 };
 export default Sellercard;

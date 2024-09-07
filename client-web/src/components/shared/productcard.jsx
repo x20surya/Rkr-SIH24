@@ -9,7 +9,7 @@ const ProductCard = ({ product, size }) => {
   };
 
   return (
-    <div className="relative p-5 border rounded-lg shadow-md">
+    <div className="relative p-5 border rounded-lg shadow-md bg-white">
       <img
         className="w-full h-48 object-cover"
         src={product.image}
