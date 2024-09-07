@@ -10,13 +10,14 @@ const GlobalProvider = ({ children }) => {
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
-    if (storedToken.length === "") {
-      setToken("");
-      setIsAuthenticated(false);
-    } else {
+    if (storedToken) {
       setToken(storedToken);
 
       setIsAuthenticated(true);
+      
+    } else {
+      setToken("");
+      setIsAuthenticated(false);
     }
   }, []);
 
