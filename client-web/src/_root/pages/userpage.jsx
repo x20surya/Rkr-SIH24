@@ -3,6 +3,8 @@ import UserCard from "@/components/shared/usercard";
 import { Phone } from 'lucide-react';
 import { Map } from 'lucide-react';
 import { Mail } from 'lucide-react';
+import { Progress } from "@/components/ui/progress"
+
 export default function UserPage() {
   return (
     <div className="min-h-screen bg p-6 flex items-center justify-center w-full">
@@ -36,6 +38,7 @@ Aditya Raj
       Ranchi, Jharkhand
     </p>
       </div>
+      
         </div>
         <div className="grid grid-rows-2 gap-6">
           <div className="bg-background p-6 rounded-lg shadow-lg">
