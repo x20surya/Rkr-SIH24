@@ -5,6 +5,7 @@ import { Seller } from "../db/seller.js";
 import jwt from "jsonwebtoken"
 import { userJWTAuthentication } from "../middleware/user.js";
 import { productExists, sellerHasProduct } from "../middleware/product.js";
+import { filterProduct } from "../services/filterProducts.js";
 
 const router = Router()
 
@@ -21,12 +22,12 @@ router.post("/add",JWT_seller_authentication ,async (req, res) => {
     const description = req.body.description
     const tags = req.body.tags
 
-    if(!name || !description || !stock || !price || !dimensions){
+    if(!name || !description || !stock || !price){
         return res.json({
             error : "Necessary details not maintained"
         })
     }   
-    if(tags.length() < 3){
+    if(tags.length < 3){
         return res.json({
             error : "Insufficient Tags"
         })
@@ -62,53 +63,25 @@ router.post("/add",JWT_seller_authentication ,async (req, res) => {
     })
 })
 
-router.get("/getProduct",userJWTAuthentication , (req, res) => {
+router.get("/getProduct",userJWTAuthentication , async (req, res) => {
     const pid = req.body.productId
-    const product = new Product.findById(pid)
+    const product = await Product.findById(pid)
     return product
 })
 
 router.post("/editProduct",JWT_seller_authentication ,productExists ,sellerHasProduct, async (req, res) => {
     const pid = req.body.product
+    const new_prod = req.body.newProduct
 
-    const stock = req.body.stock
-    const dimensions = req.body.dimensions
-    const name = req.body.name
-    const price = req.body.price
-    const description = req.body.description
-    const tags = req.body.tags
-
-    const product = await Product.findById(pid)
-
-    if(stock){
-        product.stock = stock
-    }
-    if(dimensions){
-        product.dimensions = dimensions
-    }
-    if(name){
-        product.name = name
-    }
-    if(price){
-        product.price = price
-    }
-    if(description){
-        product.descripton = description
-    }
-    if(tags){
-        product.tags = tags
-    }
-    
+    const product = await Product.findByIdAndUpdate(pid, new_prod)
     product.save()
-
-    return res.json(product)
+    return res.json(await Product.findById(pid))
 })
 
-router.get("/getProductByFilter", userJWTAuthentication, (req, res) => {
-    const temp_filter = req.body.filter
-    const filter = JSON.parse(temp_filter)
-
-
+router.get("/getProductByFilter",  userJWTAuthentication,async (req, res) => {
+    const filter = req.body.filter
+    const products = await filterProduct(filter)
+    return res.json({products : products})
 })
 
 export default router

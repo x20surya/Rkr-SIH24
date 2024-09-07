@@ -1,5 +1,6 @@
-import { Product } from "../db/product"
-import { Seller } from "../db/seller"
+import { Product } from "../db/product.js"
+import { Seller } from "../db/seller.js"
+import jwt from "jsonwebtoken"
 
 export const sellerHasProduct =async (req, res, next) => {
     const auth = req.headers.authentication

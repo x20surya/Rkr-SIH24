@@ -23,7 +23,7 @@ const SimilarProduct = () => {
     };
 
     return (
-        <div className="relative p-5 hidden lg:block">
+        <div className="relative p-5 hidden lg:block w-full">
     <h2 className="scroll-m-20 border-b pb-2   text-3xl font-semibold text-left relative left-4 tracking-tight first:mt-0">
         Similar Products
     </h2>
