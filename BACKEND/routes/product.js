@@ -5,6 +5,7 @@ import { Seller } from "../db/seller.js";
 import jwt from "jsonwebtoken"
 import { userJWTAuthentication } from "../middleware/user.js";
 import { productExists, sellerHasProduct } from "../middleware/product.js";
+import { filterProduct } from "../services/filterProducts.js";
 
 const router = Router()
 
@@ -62,9 +63,9 @@ router.post("/add",JWT_seller_authentication ,async (req, res) => {
     })
 })
 
-router.get("/getProduct",userJWTAuthentication , (req, res) => {
+router.get("/getProduct",userJWTAuthentication , async (req, res) => {
     const pid = req.body.productId
-    const product = new Product.findById(pid)
+    const product = await Product.findById(pid)
     return product
 })
 
@@ -77,9 +78,10 @@ router.post("/editProduct",JWT_seller_authentication ,productExists ,sellerHasPr
     return res.json(await Product.findById(pid))
 })
 
-router.get("/getProductByFilter", userJWTAuthentication, (req, res) => {
-    const filter = req.body.temp_filter
-
+router.get("/getProductByFilter",  userJWTAuthentication,async (req, res) => {
+    const filter = req.body.filter
+    const products = await filterProduct(filter)
+    return res.json({products : products})
 })
 
 export default router
