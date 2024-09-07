@@ -6,6 +6,7 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
+  import { Notebook } from "lucide-react";
 export default function Blogs() {
     return (
         <div className="bg-background p-6 rounded-lg shadow-lg">
