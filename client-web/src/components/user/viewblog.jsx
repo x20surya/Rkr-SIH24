@@ -6,13 +6,21 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
+  import { NotebookPenIcon } from "lucide-react";
 export default function Blogs() {
     return (
         <div className="bg-background p-6 rounded-lg shadow-lg">
           
     <Dialog>
       <DialogTrigger>
-        <button className="btn btn-primary">Your Blogs</button>
+      <div className="flex flex-row gap-5">
+          <div>
+          <NotebookPenIcon className="h-[18] w-[18]"/>
+          </div>
+          <div>
+          <button className="btn btn-primary">Your Blogs</button>
+          </div>
+        </div>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

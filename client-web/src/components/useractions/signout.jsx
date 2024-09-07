@@ -6,8 +6,8 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
-  import { Heart } from "lucide-react";
-export default function Wishlist() {
+import { LogOut } from "lucide-react";
+  export default function SignOut() {
     return (
         <div className="bg-background p-6 rounded-lg shadow-lg">
           
@@ -15,10 +15,10 @@ export default function Wishlist() {
       <DialogTrigger>
       <div className="flex flex-row gap-5">
           <div>
-          <Heart className="h-[18] w-[18]"/>
+          <LogOut className="h-[18] w-[18]"/>
           </div>
           <div>
-          <button className="btn btn-primary">Your Wishlist</button>
+          <button className="btn btn-primary">Log Out</button>
           </div>
         </div>
       </DialogTrigger>
