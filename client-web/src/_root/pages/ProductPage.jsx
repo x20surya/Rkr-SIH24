@@ -5,6 +5,8 @@ import AccordionComponent from "@/components/shared/accordion";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/shared/productcard";
 import SimilarProduct from "@/components/shared/similarproduct";
+import ProductCarousalComponent from "@/components/shared/productpagecarousel";
+import SmallScreensSimilarProduct from "@/components/shared/smallscreenssimilarproduct";
 export default function ProductPage() {
   const productrating=4.4;
     const rating=Math.round(productrating);
@@ -73,7 +75,7 @@ export default function ProductPage() {
         <div className="ml-4 md:ml-16 mt-4 mb-6 md:mt-10">
 </div>
 <SimilarProduct/>
-<CarousalComponent />
+<SmallScreensSimilarProduct />
        </section>
        </section>
       </>
