@@ -123,7 +123,7 @@ export default function SellerInfo(props) {
         </p>
       </div>
       <Tabs
-        defaultValue="account"
+        defaultValue="Products"
         className="w-full flex flex-col items-center mt-6"
       >
         <TabsList className="w-52 h-fit">

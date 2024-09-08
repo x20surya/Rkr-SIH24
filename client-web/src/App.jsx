@@ -22,14 +22,15 @@ function App() {
         </Route>
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
-          <Route path="/region" element={<Region />} />
+
+          <Route path="/seller" element={<BySeller />} />
           <Route path="/seller/:sellerId" element={<SellerInfo />} />
           <Route path="/product/:productId" element={<ProductPage />} />
-          <Route path="/region/state" element={<State />} />
+          <Route path="/region" element={<Region />} />
+          <Route path="/region/:state" element={<State />} />
           <Route path="/user" element={<UserPage />} />
           <Route path="/search" element={<Recommendation />} />
           <Route path="/becomeaseller" element={<BecomeAseller />} />
-          <Route path="/sellers" element={<BySeller/>} />
         </Route>
       </Routes>
     </main>

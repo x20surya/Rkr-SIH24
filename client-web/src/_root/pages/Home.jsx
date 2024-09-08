@@ -64,7 +64,7 @@ export default function Home() {
             className="self-start border-4 border-primary-foreground"
           >
             {" "}
-            Shop Now
+            <Link to={"/seller"}>Shop Now</Link>
           </Button>
         </div>
       </div>
@@ -94,7 +94,7 @@ export default function Home() {
             className="self-start border-4 border-primary-foreground"
           >
             {" "}
-            Shop Now
+            <Link to={"/region"}>Shop Now</Link>
           </Button>
         </div>
       </div>

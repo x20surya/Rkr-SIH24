@@ -105,7 +105,7 @@ export default function State() {
 
         <div>
           <Tabs
-            defaultValue="account"
+            defaultValue="Products"
             className="flex flex-col items-center mt-6"
           >
             <TabsList className="w-52 h-fit">

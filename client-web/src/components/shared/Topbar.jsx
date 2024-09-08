@@ -19,6 +19,7 @@ import {
 import {
   complexflower1,
   floralbackground,
+  painting2,
   potteryman,
   redflower1,
   redleaf1,
@@ -50,7 +51,7 @@ export default function Topbar() {
                 src={indianwomen}
               />
               <p className="bg-transparent text-white text-4xl rounded-md font-serif">
-                Heritage Haat
+                <Link to={"/"}>Heritage Haat</Link>
               </p>
             </div>
             <div className="flex flex-1 flex-row justify-end ">
@@ -71,30 +72,30 @@ export default function Topbar() {
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <Link
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                            className="flex h-full w-full"
                             to="/"
                           >
                             <div className="mb-2 mt-4 text-lg font-medium">
-                              <img src={complexflower1} />
+                              <img src={painting2} />
                             </div>
                           </Link>
                         </NavigationMenuLink>
                       </li>
                       <Link
-                        to="/docs"
+                        to="/seller"
                         title="BestSellers"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Best Sellers <ChevronDown />{" "}
                         </div>
                       </Link>
                       <Link
-                        to="/docs/installation"
+                        to="/region"
                         title="RegionBasedProducts"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Region Based Products <ChevronDown />{" "}
                         </div>
                       </Link>
@@ -103,8 +104,8 @@ export default function Topbar() {
                         title="Something"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
-                          Something <ChevronDown />{" "}
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
+                          <Link to="/search">Explore</Link> <ChevronDown />{" "}
                         </div>
                       </Link>
                     </ul>
@@ -134,7 +135,7 @@ export default function Topbar() {
                         title="Blogs"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Blogs <ChevronDown />{" "}
                         </div>
                       </Link>
@@ -143,7 +144,7 @@ export default function Topbar() {
                         title="ContactUs"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Contact Us <ChevronDown />{" "}
                         </div>
                       </Link>
@@ -152,7 +153,7 @@ export default function Topbar() {
                         title="AboutUs"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           About Us
                           <ChevronDown />{" "}
                         </div>
@@ -184,7 +185,7 @@ export default function Topbar() {
                         title="product1"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Rajasthani Kettle <ChevronDown />{" "}
                         </div>
                       </Link>
@@ -193,7 +194,7 @@ export default function Topbar() {
                         title="product2"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Kashmiri Shawl <ChevronDown />{" "}
                         </div>
                       </Link>
@@ -202,7 +203,7 @@ export default function Topbar() {
                         title="product3"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Banarsi Saree <ChevronDown />{" "}
                         </div>
                       </Link>
@@ -233,7 +234,7 @@ export default function Topbar() {
                         title="YourOrders"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Your Orders <ChevronDown />{" "}
                         </div>
                       </Link>
@@ -242,16 +243,16 @@ export default function Topbar() {
                         title="YourWishlist"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Your Wishlist <ChevronDown />{" "}
                         </div>
                       </Link>
                       <Link
-                        to="/docs/primitives/typography"
+                        to="/user"
                         title="ProfileSettings"
                         className="text-xl hover:bg-[rgba(0,0,0,0.2)]"
                       >
-                        <div className="flex flex-1 flex-row">
+                        <div className="flex flex-1 flex-row h-full items-center pl-4">
                           Profile Settings <ChevronDown />{" "}
                         </div>
                       </Link>
@@ -267,12 +268,10 @@ export default function Topbar() {
                 <MenuIcon color="white" size={35} strokeWidth={3} />
               </SheetTrigger>
               <div className=" flex flex-1 flex-row justify-between items-center gap-x- ">
-                
                 <p className="bg-transparent flex-auto text-center text-white text-4xl rounded-md font-serif">
-                  Heritage Haat
+                  <Link to={"/"}>Heritage Haat</Link>
                 </p>
-                <Input placeholder="Search..." className="w-40 bg-white"/>
-                
+                <Input placeholder="Search..." className="w-40 bg-white" />
               </div>
               <SheetContent
                 style={{ backgroundImage: `url(${floralbackground})` }}

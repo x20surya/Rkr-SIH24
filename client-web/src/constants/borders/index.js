@@ -18,6 +18,7 @@ import potteryman from "./potteryman.jpg"
 import indianart from "./indianart.jpg"
 import sidepattern from "./sidepattern.svg"
 import painting from "./painting.webp"
+import painting2 from "./painting2.jpg"
 
 export {
   borderblue,
@@ -39,5 +40,6 @@ export {
   potteryman,
   indianart,
   sidepattern,
-  painting
+  painting,
+  painting2
 };
