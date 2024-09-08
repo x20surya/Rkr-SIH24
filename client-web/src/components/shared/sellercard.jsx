@@ -73,7 +73,7 @@ const Sellercard = () => {
             <div className="flex flex-col items-center justify-center gap-3 pl-2 pr-2 lg:p-0 bg-card">
                 
               <h1 className="text-3xl font-bold mt-3">Name</h1>
-              <p className="text-sm font-medium text-center max-w-full lg:max-w-[90%]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>
+              <p className="text-sm font-medium text-center max-w-full lg:max-w-[85%]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen</p>
               <div className="flex flex-row gap-4 mb-3">
                 <Link>
                   <Facebook
@@ -94,11 +94,11 @@ const Sellercard = () => {
                   />
                 </Link>
               </div>
-              <Button className="w-24 h-8 lg:w-40 lg:h-10 -mt-4 mb-2">View Profile</Button>
+              <Button className="w-24 h-8 lg:w-40 lg:h-10 max-sm:-mt-4  mb-2">View Profile</Button>
             </div>
           </div>
           <div className="flex  justify-center items-center rounded-lg max-sm:hidden sm:hidden lg:contents">
-            <Carousel className="ml-[3.2rem] mr-[3.2rem] mt-2 rounded-lg mb-2">
+            <Carousel className="ml-[3.2rem] mr-[3.2rem] mt-2 rounded-lg mb-1">
               <CarouselContent className="bg-card">
                 {products.map((product, index) => (
                   <CarouselItem className=" md:basis-1/2 lg:basis-1/3">
