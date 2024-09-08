@@ -13,12 +13,12 @@ export default function Address() {
           
     <Dialog>
       <DialogTrigger>
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-row gap-x-1.5 lg:gap-5">
           <div>
           <Map className="h-[18] w-[18]"/>
           </div>
           <div>
-          <button className="btn btn-primary">Saved Address</button>
+          <button className="btn btn-primary ">Saved Address</button>
           </div>
         </div>
       </DialogTrigger>

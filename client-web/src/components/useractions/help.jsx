@@ -13,7 +13,7 @@ import { FileQuestion } from "lucide-react";
           
     <Dialog>
       <DialogTrigger>
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-row gap-x-1.5 lg:gap-5">
           <div>
           <FileQuestion className="h-[18] w-[18]"/>
           </div>
