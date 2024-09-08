@@ -266,11 +266,13 @@ export default function Topbar() {
               <SheetTrigger>
                 <MenuIcon color="white" size={35} strokeWidth={3} />
               </SheetTrigger>
-              <div className=" flex flex-1 flex-row justify-between items-center gap-x-2 ">
+              <div className=" flex flex-1 flex-row justify-between items-center gap-x- ">
                 
                 <p className="bg-transparent flex-auto text-center text-white text-4xl rounded-md font-serif">
                   Heritage Haat
                 </p>
+                <Input placeholder="Search..." className="w-40 bg-white"/>
+                
               </div>
               <SheetContent
                 style={{ backgroundImage: `url(${floralbackground})` }}
